@@ -24,17 +24,17 @@ plt.plot(x_AB[0,:],x_AB[1,:],label='$AB$')
 plt.plot(x_perp_bisect[0,:],x_perp_bisect[1,:],label='$Right Bisector$')
 
 plt.plot(A[0], A[1], 'o')
-plt.text(A[0] * (1 + 0.1), A[1] * (1 - 0.1) , 'A')
+plt.text(A[0] * (1), A[1] * (1 - 0.1) , 'A')
 plt.plot(B[0], B[1], 'o')
-plt.text(B[0] * (1 - 0.2), B[1] * (1) , 'B')
+plt.text(B[0] * (1 - 0.1), B[1] * (1-0.1) , 'B')
 plt.plot(Mid[0], Mid[1], 'o')
-plt.text(Mid[0] * (1 - 0.2), Mid[1] * (1) , 'Mid')
+plt.text(Mid[0] * (1 - 0.2), Mid[1] * (1+0.1) , 'Mid')
 
 plt.xlabel('$x$')
 plt.ylabel('$y$')
 plt.legend(loc='best')
-plt.grid() # minor
-plt.axis('equal')
+plt.grid()
+plt.axis('square')
 
 plt.savefig('Figure1.png')
 
