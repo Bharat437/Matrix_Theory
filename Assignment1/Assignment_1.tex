@@ -128,7 +128,7 @@ columns=fullflexible
 \maketitle
 \newpage
 \bigskip
-\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thefigure}{1}
 \renewcommand{\thetable}{\theenumi}
 Download all python codes from 
 \begin{lstlisting}
@@ -166,8 +166,11 @@ The equation of line in terms of normal vector is then obtained as
     \implies\left(\begin{array}{cc}2 & 1\end{array}\right)\textbf{x} = 5
 \end{align}
 We got equation of the right bisector of line segment joining points \textbf{A} and \textbf{B}. The line also passes through point \textbf{M}.
-
 Plot of Line segment and Right bisector:
-
-\includegraphics[width=10cm, height=8cm]{Figure_1}
+\begin{figure}
+    \centering
+    \includegraphics[width=10cm, height=8cm]{Figure_1}
+    \caption{Right bisector of line AB}
+    \label{fig:figure1}
+\end{figure}
 \end{document}
