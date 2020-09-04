@@ -147,8 +147,10 @@ simplify \begin{equation}
 \section{\textbf{Explanation}}
 \begin{gather}
     \cos\theta\left(\begin{array}{cc}\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta\end{array}\right)+\sin\theta\left(\begin{array}{cc}\sin\theta & -\cos\theta \\ \cos\theta & \sin\theta\end{array}\right)\\
-    \implies\left(\begin{array}{cc}\cos^2\theta & \cos\theta\sin\theta \\ -\cos\theta\sin\theta & \cos^2\theta\end{array}\right)\\\nonumber+\left(\begin{array}{cc}\sin^2\theta & -\sin\theta\cos\theta \\ \sin\theta\cos\theta & \sin^2\theta\end{array}\right)\\
-    \implies\left(\begin{array}{cc}\cos^2\theta+\sin^2\theta & \cos\theta\sin\theta-\sin\theta\cos\theta \\ -\cos\theta\sin\theta+\sin\theta\cos\theta & \cos^2\theta+\sin^2\theta\end{array}\right)\\
+    \implies\cos\theta\left(\begin{array}{cc}\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta\end{array}\right)\\\nonumber+\cos(270+\theta)\left(\begin{array}{cc}\cos(270+\theta) & \sin(270+\theta) \\ -\sin(270+\theta) & \cos(270+\theta)\end{array}\right)\\
+    \implies\left(\begin{array}{cc}\cos^2\theta & \cos\theta\sin\theta \\ -\cos\theta\sin\theta & \cos^2\theta\end{array}\right)\\\nonumber+\left(\begin{array}{cc}\cos^2(270+\theta) & \cos(270+\theta)\sin(270+\theta) \\ -\cos(270+\theta)\sin(270+\theta) & \cos^2(270+\theta)\end{array}\right)\\
+    \implies\left(\begin{array}{cc}\frac{1+\cos2\theta}{2} & \frac{\sin2\theta}{2} \\ -\frac{\sin2\theta}{2} & \frac{1+\cos2\theta}{2}\end{array}\right)\\\nonumber+\left(\begin{array}{cc}\frac{1+\cos(540+2\theta)}{2} & \frac{\sin(540+2\theta)}{2} \\ -\frac{\sin(540+2\theta)}{2} & \frac{1+\cos(540+2\theta)}{2}\end{array}\right)\\
+    \implies\left(\begin{array}{cc}\frac{1+\cos2\theta}{2} & \frac{\sin2\theta}{2} \\ -\frac{\sin2\theta}{2} & \frac{1+\cos2\theta}{2}\end{array}\right)+\left(\begin{array}{cc}\frac{1-\cos2\theta}{2} & \frac{-\sin2\theta}{2} \\ \frac{\sin2\theta}{2} & \frac{1-\cos2\theta}{2}\end{array}\right)\\
     \implies\left(\begin{array}{cc} 1 & 0 \\ 0 & 1\end{array}\right)=\vec{I}
 \end{gather}
 Hence it is simplified.
