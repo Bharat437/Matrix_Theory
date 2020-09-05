@@ -141,26 +141,28 @@ and latex-tikz codes from
 https://github.com/Bharat437/Matrix_Theory/tree/master/Assignment2
 \end{lstlisting}
 \section{\textbf{Question}}
-simplify \begin{equation}
-    \cos\theta\left(\begin{array}{cc}\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta\end{array}\right)+\sin\theta\left(\begin{array}{cc}\sin\theta & -\cos\theta \\ \cos\theta & \sin\theta\end{array}\right)\nonumber
-\end{equation}
+simplify \begin{align}
+    \cos\theta\myvec{\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta}+\sin\theta\myvec{\sin\theta & -\cos\theta \\ \cos\theta & \sin\theta}\nonumber
+\end{align}
 \section{\textbf{Explanation}}
-\begin{gather}
-    \cos\theta\left(\begin{array}{cc}\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta\end{array}\right)+\sin\theta\left(\begin{array}{cc}\sin\theta & -\cos\theta \\ \cos\theta & \sin\theta\end{array}\right)\\
-    =\cos\theta\left(\begin{array}{cc} 1 & 0 \\ 0 & 1\end{array}\right)\left(\begin{array}{cc}\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta\end{array}\right)\\\nonumber+\sin\theta\left(\begin{array}{cc} 0 & -1 \\ 1 & 0 \end{array}\right)\left(\begin{array}{cc}\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta\end{array}\right)
-\end{gather}
+\begin{align}
+    \cos\theta\myvec{\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta}+\sin\theta\myvec{\sin\theta & -\cos\theta \\ \cos\theta & \sin\theta}
+\end{align}
 \begin{multline}
-    =\left(\cos\theta\left(\begin{array}{cc} 1 & 0 \\ 0 & 1\end{array}\right)+\sin\theta\left(\begin{array}{cc} 0 & -1 \\ 1 & 0 \end{array}\right)\right)\\\times\left(\begin{array}{cc}\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta\end{array}\right)
+    =\cos\theta\myvec{ 1 & 0 \\ 0 & 1}\myvec{\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta}\\+\sin\theta\myvec{ 0 & -1 \\ 1 & 0 }\myvec{\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta}
 \end{multline}
 \begin{multline}
-    =\left(\left(\begin{array}{cc} \cos\theta & 0 \\ 0 & \cos\theta\end{array}\right)+\left(\begin{array}{cc} 0 & -\sin\theta \\ \sin\theta & 0 \end{array}\right)\right)\\\times\left(\begin{array}{cc}\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta\end{array}\right)
+    =\left(\cos\theta\myvec{ 1 & 0 \\ 0 & 1}+\sin\theta\myvec{ 0 & -1 \\ 1 & 0 }\right)\\\times\myvec{\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta}
+\end{multline}
+\begin{multline}
+    =\left(\myvec{ \cos\theta & 0 \\ 0 & \cos\theta}+\myvec{ 0 & -\sin\theta \\ \sin\theta & 0 }\right)\\\times\myvec{\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta}
 \end{multline}
 \begin{align}\label{equation2.0.5}
-    =\left(\begin{array}{cc}\cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\end{array}\right)\left(\begin{array}{cc}\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta\end{array}\right)
+    =\myvec{\cos\theta & -\sin\theta \\ \sin\theta & \cos\theta}\myvec{\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta}
 \end{align}
 In \eqref{equation2.0.5}, the left matrix rotates a vector by angle +$\theta$. Obviously the right matrix rotates a vector by angle -$\theta$. Then the product of matrices is identity matrix.
 \begin{align}
-    =\left(\begin{array}{cc} 1 & 0 \\ 0 & 1\end{array}\right)=\vec{I}
+    =\myvec{ 1 & 0 \\ 0 & 1}=\vec{I}
 \end{align}
 Hence it is simplified.
 \end{document}
