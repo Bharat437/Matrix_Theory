@@ -143,18 +143,16 @@ https://github.com/Bharat437/Matrix_Theory/tree/master/Assignment3
 \section{\textbf{Question}}
 (Section 3.10) 9. Show that $\mydet{x & a & x+a \\ y & b & y+b \\ z & c & z+c}=0$
 \section{\textbf{Explanation}}
-Now we perform elementary row operations to tranform given matrix to echelon form.
+Apply Transformations:
 \begin{align}
-    \myvec{x & a & x+a \\ y & b & y+b \\ z & c & z+c}\\
-    \xleftrightarrow[]{R_2\leftarrow xR_2-yR_1}\myvec{x & y & z \\ 0 & bx-ay & bx-ay \\ z & c & z+c}\\
-    \xleftrightarrow[]{R_3\leftarrow xR_3-zR_1}\myvec{x & a & x+a \\ 0 & bx-ay & bx-ay \\ 0 & cx-az & cx-az}\\
-    \label{eq:4}
-    \xleftrightarrow[]{R_3\leftarrow (bx-ay)R_3-(cx-az)R_2}\myvec{x & a & x+a \\ 0 & bx-ay & bx-ay \\ 0 & 0 & 0}
+    \mydet{x & a & x+a \\ y & b & y+b \\ z & c & z+c}\\
+    \label{eq:2}
+    \xleftrightarrow[]{C_3\leftarrow C_3-C_2}\mydet{x & a & x \\ y & b & y \\ z & c & z}
 \end{align}
 
-Now the determinant is multiplication of pivots.
+If any two rows or two columns are same then the determinant of matrix is 0.
 
-But in \eqref{eq:4}, we observe that the 3rd pivot is zero.
+In \eqref{eq:2}, we observe that the 1st and 3rd columns are equal.
 
 Therefore $\mydet{x & a & x+a \\ y & b & y+b \\ z & c & z+c}=0$
 \end{document}
