@@ -1,0 +1,19 @@
+\documentclass{standalone}
+
+\usepackage{tikz,pgf} 
+\usepackage{amsmath}
+
+\begin{document}
+\resizebox{10cm}{!}{
+\begin{tikzpicture}
+    \draw (0,0) node[anchor=north]{$A$}-- (4,6.9282) node[anchor=west]{$B$}-- (8,0) node[anchor=north]{$C$}-- cycle;
+    \draw (4,6.9282) -- (4,0) node[anchor=north]{$F$};
+    \draw (0,0)  (0:0.75cm) arc (0:60:0.75cm);
+    \draw (30:1.15cm) node{$60^\circ$};
+    \draw (4,0.5) -- (3.5,0.5) -- (3.5,0);
+    \begin{scope}[shift={(4,0)}]
+        \draw (135:0.75cm) node[anchor=east]{$90^\circ$};
+    \end{scope}
+\end{tikzpicture}
+}
+\end{document}
