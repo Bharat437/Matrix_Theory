@@ -187,27 +187,20 @@ Consider an equilateral $\triangle{ABC}$ as shown in below figure:
     \label{fig:tri_right_angle}
 \end{figure}
 
-We know that in an equilateral triangle all sides have equal length.
+In equilateral triangle, all sides have equal length. Lets consider coordinates of points as A(0,0), B $\left(\frac{1}{2}\text{,}\frac{\sqrt{3}}{2}\right)$, C(1,0) such that each side has length equal to 1 and forms an equilateral triangle.
+
+Direction vector of AC and AB is given as below
 \begin{align}
-    \label{eq:1}
-    \implies\norm{AB}=\norm{BC}=\norm{AC}
+    \vec{m}_{AC}=\myvec{1 \\ 0 }\\
+    \vec{m}_{AB}=\myvec{\frac{1}{2} \\ \frac{\sqrt{3}}{2}}
+\end{align}
+We can say that line AB is obtained by rotating line AC by $+60^\circ$. Using rotation matrix, we can obtain direction vector of AB as below.
+\begin{align}
+    \myvec{ \cos60^\circ & -\sin60^\circ \\ \sin60^\circ & \cos60^\circ }\vec{m}_{AC}=\vec{m}_{AB}\\
+    \implies\myvec{ \cos60^\circ & -\sin60^\circ \\ \sin60^\circ & \cos60^\circ }\myvec{1 \\ 0 }=\myvec{\frac{1}{2} \\ \frac{\sqrt{3}}{2}}\\
+    \implies\myvec{ \cos60^\circ \\ \sin60^\circ }=\myvec{\frac{1}{2} \\ \frac{\sqrt{3}}{2}}\\
+    \cos60^\circ=\frac{1}{2}
 \end{align}
 
-Since F is midpoint of line AC.
-\begin{align}
-    \implies\norm{AF}=\frac{1}{2}\norm{AC}
-\end{align}
-From \eqref{eq:1},
-\begin{align}
-    \label{eq:2}
-    \implies\norm{AF}=\frac{1}{2}\norm{AB}
-\end{align}
-
-$\triangle{ABF}$ forms a right-angled triangle. Using cosine formula,
-\begin{align}
-    \implies\cos60^\circ=\frac{\norm{AF}}{\norm{AB}}\\
-    =\frac{\frac{1}{2}\norm{AB}}{\norm{AB}}\\
-    \implies\cos60^\circ=\frac{1}{2}
-\end{align}
 Hence proved.
 \end{document}
