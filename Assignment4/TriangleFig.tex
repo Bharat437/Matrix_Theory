@@ -6,16 +6,13 @@
 \begin{document}
 \resizebox{10cm}{!}{
 \begin{tikzpicture}
-    \draw (0,0) node[anchor=north]{$A$}-- (4,6.9282) node[anchor=west]{$B$}-- (8,0) node[anchor=north]{$C$}-- cycle;
-    \draw (0,0)  (0:0.75cm) arc (0:60:0.75cm);
-    \draw (30:1.15cm) node{$60^\circ$};
-    \begin{scope}[shift={(8,0)}]
-        \draw (0,0)  (180:0.75cm) arc (180:120:0.75cm); \draw (150:1.15cm)node{$60^\circ$};
-    \end{scope}
-    \begin{scope}[shift={(4,6.9282)}]
-        \draw (0,0)  (-120:0.75cm) arc (-120:-60:0.75cm); 
-        \draw (-90:1.15cm)node{$60^\circ$};
-    \end{scope}
+    \draw (0, 0) coordinate (B) 
+        -- node[below] {$k$} (8,0) coordinate (C) 
+        -- node[above right] {$k$} (4,6.9282) coordinate (A) 
+        -- node[above left] {$k$}  (0, 0);
+        \node at (A)[anchor=south] {$A$};
+        \node at (B)[anchor=north] {$B$};
+        \node at (C)[anchor=north] {$C$};
 \end{tikzpicture}
 }
 \end{document}
