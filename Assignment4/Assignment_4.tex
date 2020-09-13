@@ -1,28 +1,14 @@
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
-%
+
 \usepackage{setspace}
 \usepackage{gensymb}
-\usepackage{siunitx}
-\usepackage{tkz-euclide} 
-\usepackage{textcomp}
 \usepackage{standalone}
-\usetikzlibrary{calc}
-
-%\doublespacing
 \singlespacing
 
-%\usepackage{graphicx}
-%\usepackage{amssymb}
-%\usepackage{relsize}
+
 \usepackage[cmex10]{amsmath}
-%\usepackage{amsthm}
-%\interdisplaylinepenalty=2500
-%\savesymbol{iint}
-%\usepackage{txfonts}
-%\restoresymbol{TXF}{iint}
-%\usepackage{wasysym}
+
 \usepackage{amsthm}
-%\usepackage{iithtlc}
 \usepackage{mathrsfs}
 \usepackage{txfonts}
 \usepackage{stfloats}
@@ -30,11 +16,10 @@
 \usepackage{cite}
 \usepackage{cases}
 \usepackage{subfig}
-%\usepackage{xtab}
+
 \usepackage{longtable}
 \usepackage{multirow}
-%\usepackage{algorithm}
-%\usepackage{algpseudocode}
+
 \usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{steinmetz}
@@ -43,9 +28,9 @@
 \usepackage{verbatim}
 \usepackage{tfrupee}
 \usepackage[breaklinks=true]{hyperref}
-%\usepackage{stmaryrd}
-\usepackage{tkz-euclide} % loads  TikZ and tkz-base
-%\usetkzobj{all}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
 \usetikzlibrary{calc,math}
 \usepackage{listings}
     \usepackage{color}                                            %%
@@ -55,18 +40,12 @@
     \usepackage{multirow}                                         %%
     \usepackage{hhline}                                           %%
     \usepackage{ifthen}                                           %%
-  %optionally (for landscape tables embedded in another document): %%
     \usepackage{lscape}     
 \usepackage{multicol}
 \usepackage{chngcntr}
-\usepackage{amsmath}
-\usepackage{cleveref}
-%\usepackage{enumerate}
 
-%\usepackage{wasysym}
-%\newcounter{MYtempeqncnt}
 \DeclareMathOperator*{\Res}{Res}
-%\renewcommand{\baselinestretch}{2}
+
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
@@ -75,7 +54,7 @@
 \renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
 \renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
 
-% correct bad hyphenation here
+
 \hyphenation{op-tical net-works semi-conduc-tor}
 \def\inputGnumericTable{}                                 %%
 
@@ -85,16 +64,10 @@ frame=single,
 breaklines=true,
 columns=fullflexible
 }
-%\lstset{
-%language=tex,
-%frame=single, 
-%breaklines=true
-%}
-\usepackage{graphicx}
+\usepackage{pdfpages}
 \usepackage{pgfplots}
 
 \begin{document}
-%
 
 
 \newtheorem{theorem}{Theorem}[section]
@@ -104,15 +77,11 @@ columns=fullflexible
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}{Example}[section]
 \newtheorem{definition}[problem]{Definition}
-%\newtheorem{thm}{Theorem}[section] 
-%\newtheorem{defn}[thm]{Definition}
-%\newtheorem{algorithm}{Algorithm}[section]
-%\newtheorem{cor}{Corollary}
+
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
 \bibliographystyle{IEEEtran}
-%\bibliographystyle{ieeetr}
 \providecommand{\mbf}{\mathbf}
 \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
@@ -143,20 +112,13 @@ columns=fullflexible
 \providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
 \newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 \newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
-%\numberwithin{equation}{section}
 \numberwithin{equation}{subsection}
-%\numberwithin{problem}{section}
-%\numberwithin{definition}{section}
 \makeatletter
 \@addtoreset{figure}{problem}
 \makeatother
 \let\StandardTheFigure\thefigure
 \let\vec\mathbf
-%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
 \renewcommand{\thefigure}{\theproblem}
-%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
-%\counterwithin{equation}{enumi}
-%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
 \def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
      \def\rightbox#1{\makebox[0in][r]{#1}}
      \def\centbox#1{\makebox[0in]{#1}}
@@ -192,18 +154,16 @@ In equilateral triangle all sides have equal length
 \begin{align}
     \label{eq:1}\implies\norm{\vec{A-B}}=\norm{\vec{B-C}}=\norm{\vec{A-C}}=k
 \end{align}
-
 Let $\vec{B}=0$. Then substituting in \eqref{eq:1} will give
 \begin{align}
     \label{eq:2}\norm{\vec{A}}=\norm{\vec{C}}\\
     \label{eq:3}\norm{\vec{A}}=\norm{\vec{A-C}}
 \end{align}
-
 Taking square on both sides in \eqref{eq:3}.
 \begin{align}
     \implies\norm{\vec{A}}^2=\norm{\vec{A-C}}^2\\
     \implies\norm{\vec{A}}^2=\norm{\vec{A}}^2+\norm{\vec{C}}^2-2\vec{A}^T\vec{C}\\
-    \imlies\norm{\vec{A}}^2=\norm{\vec{A}}^2+\norm{\vec{A}}^2-2\vec{A}^T\vec{C}\\
+    \implies\norm{\vec{A}}^2=\norm{\vec{A}}^2+\norm{\vec{A}}^2-2\vec{A}^T\vec{C}\\
     \implies0=\norm{\vec{A}}^2-2\vec{A}^T\vec{C}\\
     \implies2\vec{A}^T\vec{C}=\norm{\vec{A}}^2\\
     \label{eq:9}\implies\vec{A}^T\vec{C}=\frac{\norm{\vec{A}}^2}{2}
@@ -217,7 +177,6 @@ Taking the inner product of sides AB and BC.
     \norm{\vec{A}-\vec{B}}\norm{\vec{B}-\vec{C}}\cos{\theta}\\
     \label{eq:11}\implies \cos{\theta}=\frac{(\vec{A}-\vec{B})^T(\vec{B}-\vec{C})}{\norm{\vec{A}-\vec{B}}\norm{\vec{B}-\vec{C}}}
 \end{align}
-
 Substitute $\vec{B}=0$ in \eqref{eq:11}
 \begin{align}
     \label{eq:12}\implies\cos{\theta}=\frac{\vec{A}^T\vec{C}}{\norm{\vec{A}}\norm{\vec{C}}}
@@ -231,6 +190,5 @@ In equilateral triangle, $\angle ABC=60^\circ$
 \begin{align}
     \implies\cos60^\circ=\frac{1}{2}
 \end{align}
-
 Hence proved.
 \end{document}
