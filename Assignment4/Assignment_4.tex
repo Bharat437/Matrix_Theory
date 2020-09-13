@@ -188,19 +188,26 @@ Consider an equilateral $\triangle{ABC}$ as shown in below figure:
     \label{fig:tri_right_angle}
 \end{figure}
 
-Length of three sides are given as below:
-\begin{align}
-    \vec{AB}=\norm{\vec{A-B}}\\
-    \vec{BC}=\norm{\vec{B-C}}\\
-    \vec{AC}=\norm{\vec{A-C}}
-\end{align}
-
 In equilateral triangle all sides have equal length
 \begin{align}
-    \implies\vec{AB}=\vec{BC}=\vec{AC}=k
+    \label{eq:1}\implies\norm{\vec{A-B}}=\norm{\vec{B-C}}=\norm{\vec{A-C}}=k
 \end{align}
 
-Let $\vec{B}$ be origin. Then $\vec{A}=\myvec{ \frac{k}{2} \\ \frac{\sqrt{3}k}{2}}$ and $\vec{C}=\myvec{k \\ 0}$.
+Let $\vec{B}=0$. Then substituting in \eqref{eq:1} will give
+\begin{align}
+    \label{eq:2}\norm{\vec{A}}=\norm{\vec{C}}\\
+    \label{eq:3}\norm{\vec{A}}=\norm{\vec{A-C}}
+\end{align}
+
+Taking square on both sides in \eqref{eq:3}.
+\begin{align}
+    \implies\norm{\vec{A}}^2=\norm{\vec{A-C}}^2\\
+    \implies\norm{\vec{A}}^2=\norm{\vec{A}}^2+\norm{\vec{C}}^2-2\vec{A}^T\vec{C}\\
+    \imlies\norm{\vec{A}}^2=\norm{\vec{A}}^2+\norm{\vec{A}}^2-2\vec{A}^T\vec{C}\\
+    \implies0=\norm{\vec{A}}^2-2\vec{A}^T\vec{C}\\
+    \implies2\vec{A}^T\vec{C}=\norm{\vec{A}}^2\\
+    \label{eq:9}\implies\vec{A}^T\vec{C}=\frac{\norm{\vec{A}}^2}{2}
+\end{align}
 
 let $\theta=\angle ABC$.
 
@@ -208,15 +215,22 @@ Taking the inner product of sides AB and BC.
 \begin{align}
     (\vec{A}-\vec{B})^T(\vec{B}-\vec{C}) =
     \norm{\vec{A}-\vec{B}}\norm{\vec{B}-\vec{C}}\cos{\theta}\\
-    \implies \cos{\theta}=\frac{(\vec{A}-\vec{B})^T(\vec{B}-\vec{C})}{\norm{\vec{A}-\vec{B}}\norm{\vec{B}-\vec{C}}}\\
-    \implies \cos{\theta}=\frac{\myvec{ \frac{k}{2} \\ \frac{\sqrt{3}k}{2}}^T\myvec{k \\ 0}}{k^2}\\
-    \implies \cos{\theta}=\frac{\frac{k^2}{2}}{k^2}\\
-    \implies \cos{\theta}=\frac{1}{2}
+    \label{eq:11}\implies \cos{\theta}=\frac{(\vec{A}-\vec{B})^T(\vec{B}-\vec{C})}{\norm{\vec{A}-\vec{B}}\norm{\vec{B}-\vec{C}}}
 \end{align}
 
+Substitute $\vec{B}=0$ in \eqref{eq:11}
+\begin{align}
+    \label{eq:12}\implies\cos{\theta}=\frac{\vec{A}^T\vec{C}}{\norm{\vec{A}}\norm{\vec{C}}}
+\end{align}
+Substitute \eqref{eq:2},\eqref{eq:9} in \eqref{eq:12}
+\begin{align}
+    \implies\cos\theta=\frac{\frac{\norm{\vec{A}}^2}{2}}{\norm{\vec{A}}^2}\\
+    \implies\cos\theta=\frac{1}{2}
+\end{align}
 In equilateral triangle, $\angle ABC=60^\circ$
 \begin{align}
     \implies\cos60^\circ=\frac{1}{2}
 \end{align}
+
 Hence proved.
 \end{document}
