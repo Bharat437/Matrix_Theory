@@ -130,7 +130,7 @@ columns=fullflexible
 \maketitle
 \newpage
 \bigskip
-\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thefigure}{1}
 \renewcommand{\thetable}{\theenumi}
 Download latex-tikz codes from 
 %
@@ -190,7 +190,7 @@ Therefore, for $k=-10$ and $k=-\frac{35}{2}$ the given equation represents pair 
 
 Now Lets find equation of lines for $k=-10$.
 
-Substitute $k=-10$ in \eqref{eq:1.1}.we get equation of pair of straight lines as:
+Substitute $k=-10$ in \eqref{eq:1.1}. We get equation of pair of straight lines as:
 \begin{align}
     12x^2-10xy+2y^2+11x-5y+2=0
 \end{align}
@@ -228,7 +228,7 @@ Equating their product with \eqref{eq:2.2}
     c_1c_2&=f=2
 \end{align}
 
-The slopes of the lines are given by roots of polynomial
+The slopes of the lines are given by roots of equation
 \begin{align}
     cm^2+2bm+a=0\label{eq:poly}\\
     \implies 2m^2-10m+12=0\\
@@ -257,6 +257,12 @@ lets assume $k_1=1$,$k_2=2$ we get
     \implies\vec{n_1}=\myvec{-3\\1}\label{soln1}\\
     \vec{n_2}=\myvec{-4\\2}\label{soln2}
 \end{align}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\columnwidth]{Figure1}
+    \caption{Pair of straight lines for $k=-10$}
+    \label{fig:figure1}
+\end{figure}
 
 Substitute \eqref{soln1}, \eqref{soln2} in \eqref{eq:2.26} we get 
 \begin{align}
@@ -267,19 +273,21 @@ Substitute \eqref{soln1}, \eqref{soln2} in \eqref{eq:2.26} we get
 
 Solving equations \eqref{1} ,\eqref{2} we get 
 \begin{align}
-    c_1&=-13\\
-    c_2&=21
+    c_1&=-13\label{c1}\\
+    c_2&=21\label{c2}
 \end{align}
 
-Substituting \eqref{soln1},\eqref{soln2},\eqref{1},\eqref{2} in \eqref{eq:2.22} and \eqref{eq:2.23}. we get equation of two straight lines.
+Substituting \eqref{soln1},\eqref{soln2},\eqref{c1},\eqref{c2} in \eqref{eq:2.22} and \eqref{eq:2.23}. We get equation of two straight lines.
 \begin{align}
     \myvec{-3 & 1}\vec{x}=-13\\
     \myvec{-4 & 2}\vec{x}=21
 \end{align}
 
+The plot of these two lines is shown in Fig.~\ref{fig:figure1}.
+
 Now Lets find equation of lines for $k=-\frac{35}{2}$.
 
-Substitute $k=-\frac{35}{2}$ in \eqref{eq:1.1}.we get equation of pair of straight lines as:
+Substitute $k=-\frac{35}{2}$ in \eqref{eq:1.1}. We get equation of pair of straight lines as:
 \begin{align}
     12x^2-\frac{35}{2}xy+2y^2+11x-5y+2=0
 \end{align}
@@ -306,7 +314,7 @@ Now from \eqref{eq:conv},
     \implies\vec{n_1}*\vec{n_2}&=\{a,2b,c\}=\{12,-\frac{35}{2},2\}\label{eq:conv2}
 \end{align}
 
-The slopes of the lines are given by roots of polynomial in \eqref{eq:poly}
+The slopes of the lines are given by roots of equation \eqref{eq:poly}
 \begin{align}
     \implies 2m^2-\frac{35}{2}m+12=0\\
     m_i=\frac{-b\pm{\sqrt{-\mydet{\vec{V}}}}}{c}\\
@@ -318,10 +326,10 @@ The slopes of the lines are given by roots of polynomial in \eqref{eq:poly}
 The normal vector for two lines is given by \eqref{eq:normvec}
 \begin{align}
     \implies\vec{n_1}=k_1\myvec{-8\\1}\label{eq:n3}\\
-    \vec{n_2}=k_2\myvec{-\frac{3}{4}\\1}\label{eq:n2}
+    \vec{n_2}=k_2\myvec{-\frac{3}{4}\\1}\label{eq:n4}
 \end{align}
 
-Substituting \eqref{eq:n3},\eqref{eq:n2} in \eqref{eq:conv2}. we get
+Substituting \eqref{eq:n3},\eqref{eq:n4} in \eqref{eq:conv2}. we get
 \begin{align}
     k_1k_2=2
 \end{align}
@@ -333,6 +341,13 @@ lets assume $k_1=1$,$k_2=2$ we get
     \implies\vec{n_1}=\myvec{-8\\1}\label{soln3}\\
     \vec{n_2}=\myvec{-\frac{3}{2}\\2}\label{soln4}
 \end{align}
+\renewcommand{\thefigure}{2}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\columnwidth]{Figure2}
+    \caption{Pair of straight lines for $k=-\frac{35}{2}$}
+    \label{fig:figure2}
+\end{figure}
 
 Substitute \eqref{soln3}, \eqref{soln4} in \eqref{eq:2.26} we get 
 \begin{align}
@@ -343,13 +358,15 @@ Substitute \eqref{soln3}, \eqref{soln4} in \eqref{eq:2.26} we get
 
 Solving equations \eqref{3} ,\eqref{4} we get 
 \begin{align}
-    c_1&=-\frac{102}{29}\\
-    c_2&=\frac{59}{29}
+    c_1&=-\frac{102}{29}\label{c3}\\
+    c_2&=\frac{59}{29}\label{c4}
 \end{align}
 
-Substituting \eqref{soln3},\eqref{soln4},\eqref{3},\eqref{4} in \eqref{eq:2.22} and \eqref{eq:2.23}. we get equation of two straight lines.
+Substituting \eqref{soln3},\eqref{soln4},\eqref{c3},\eqref{c4} in \eqref{eq:2.22} and \eqref{eq:2.23}. we get equation of two straight lines.
 \begin{align}
     \myvec{-8 & 1}\vec{x}=-\frac{102}{29}\\
     \myvec{-\frac{3}{2} & 2}\vec{x}=\frac{59}{29}
 \end{align}
+
+The plot of these two lines is shown in Fig.~\ref{fig:figure2}.
 \end{document}
