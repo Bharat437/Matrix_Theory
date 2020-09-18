@@ -246,12 +246,9 @@ Substitute \eqref{soln1}, \eqref{soln2} in \eqref{eq:2.26}
 and calculate for $c_1$ and $c_2$
 
 \begin{align}
-    c_2\myvec{-3\\1}+c_1\myvec{-4\\2}=\myvec{ -11\\ -5}\\
-    -4c_1-3c_2=-11\label{1}\\
-    2c_1+c_2=-5\label{2}
+    c_2\myvec{-3\\1}+c_1\myvec{-4\\2}=\myvec{ -11\\ -5}
 \end{align}
-
-Solving equations \eqref{1} ,\eqref{2} using row reduction technique.
+Solving using row reduction technique.
 \begin{align}
     \implies\myvec{-4 & -3 & -11\\2 & 1 & -5}\\
     \xleftrightarrow[]{R_2\leftarrow 2R_2+R_1}\myvec{-4 & -3 & -11\\0 & -1 & -21}\\
@@ -331,14 +328,12 @@ We verify obtained $\vec{n_1}$,$\vec{n_2}$ using Toeplitz matrix
 Therefore the obtained $\vec{n_1}$,$\vec{n_2}$ are correct.\\
 Substitute \eqref{soln3}, \eqref{soln4} in \eqref{eq:2.26} we get 
 \begin{align}
-    c_2\myvec{-8\\1}+c_1\myvec{-\frac{3}{2}\\2}=\myvec{ -11\\ -5}\\
-    -3c_1-16c_2=-22\label{3}\\
-    2c_1+c_2=-5\label{4}
+    c_2\myvec{-8\\1}+c_1\myvec{-\frac{3}{2}\\2}=\myvec{ -11\\ -5}
 \end{align}
-
-Solving equations \eqref{3} ,\eqref{4} using row reduction technique.
+Solving using row reduction technique.
 \begin{align}
-    \implies\myvec{-3 & -16 & -22\\2 & 1 & -5}\\
+    \implies\myvec{-\frac{3}{2} & -8 & -11\\2 & 1 & -5}\\
+    \xleftrightarrow[]{R_1\leftarrow 2R_1}\myvec{-3 & -16 & -22\\2 & 1 & -5}\\
     \xleftrightarrow[]{R_2\leftarrow 3R_2+2R_1}\myvec{-3 & -16 & -22\\0 & -29 & -59}\\
     \xleftrightarrow[]{R_1\leftarrow 29R_1-16R_2}\myvec{-87 & 0 & 306\\0 & -29 & -59}\\
     \implies\myvec{1 & 0 & -\frac{102}{29}\\0 & 1 & \frac{59}{29}}\\
