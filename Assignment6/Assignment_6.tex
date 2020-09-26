@@ -170,26 +170,27 @@ Now from affine transformations,
 
 We have to rotate the axes by $\theta=30\degree$, Then using rotation matrix.
 \begin{align}
-    \vec{P}=\myvec{\cos\theta & -\sin\theta \\ \sin\theta & \cos\theta}\\
+    \vec{P}=\myvec{\cos\theta & -\sin\theta \\ \sin\theta & \cos\theta}
+\end{align}
+\begin{align}
     \implies\vec{P}=\myvec{\cos30\degree & -\sin30\degree \\ \sin30\degree & \cos30\degree}\\
     \implies\vec{P}=\myvec{\frac{\sqrt{3}}{2} & -\frac{1}{2} \\ \frac{1}{2} & \frac{\sqrt{3}}{2}}\label{eq:P}
 \end{align}
 
-We are not shifting the centre from origin, then
-\begin{align}
-    \implies\vec{x}=\vec{Py}
-\end{align}
-
 From eigenvalue decomposition,
 \begin{align}
-    \vec{P^TVP}=\vec{D}\label{eq:eigval}\\
+    \vec{P^TVP}=\vec{D}\label{eq:eigval}
+\end{align}
+\begin{align}
     \implies\vec{D}=\myvec{\frac{\sqrt{3}}{2} & \frac{1}{2} \\ -\frac{1}{2} & \frac{\sqrt{3}}{2}}\myvec{1 & \sqrt{3} \\ \sqrt{3} & -1}\myvec{\frac{\sqrt{3}}{2} & -\frac{1}{2} \\ \frac{1}{2} & \frac{\sqrt{3}}{2}}\\
-    \implies\vec{D}=\myvec{2 & 0 \\ 0 & -2}=\myvec{\lambda_1 & 0 \\ 0 & \lambda_2}\label{eq:D}\\
+    \implies\vec{D}=\myvec{2 & 0 \\ 0 & -2}=\myvec{\lambda_1 & 0 \\ 0 & \lambda_2}\label{eq:D}
+\end{align}
+\begin{align}
     \vec{P}=\myvec{\vec{p_1} & \vec{p_2}}\\
     \vec{P}^T=\vec{P}^{-1}
 \end{align}
 
-The equation \eqref{eq:gen} can be expressed as
+The equation \eqref{eq:gen} becomes as below due to affine transformation
 \begin{align}
     \vec{y}^T\vec{Dy}=\vec{u}^T\vec{V}^{-1}\vec{u}-f\label{eq:trans}
 \end{align}
