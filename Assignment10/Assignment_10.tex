@@ -1,0 +1,217 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+
+\singlespacing
+
+
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 10}
+\author{AVVARU BHARAT}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/Bharat437/Matrix_Theory/tree/master/Assignment10
+\end{lstlisting}
+%
+\section{Problem}
+Let $\vec{V}$ be the vector space over the complex numbers of all functions from $\mathbb{R}$ into $\mathbb{C}$, i.e., the space of all complex-valued functions on the real line. Let $f_1(x)=1$, $f_2(x)=e^{ix}$, $f_3(x)=e^{-ix}$.
+
+(a) Prove that $f_1$, $f_2$, and $f_3$ are linearly independent.
+
+(b) Let $g_1(x)=1$, $g_2(x)=\cos{x}$, $g_3(x)=\sin{x}$. Find an invertible $3\times3$ matrix $\vec{P}$ such that
+\begin{align}
+    g_j=\sum\limits_{i=1}^3 \vec{P}_{ij}f_i\label{eq}
+\end{align}
+\section{Solution}
+Given,
+\begin{align}
+    f_1(x)=1\label{f1}\\
+    f_2(x)=e^{ix}\label{f2}\\
+    f_3(x)=e^{-ix}\label{f3}
+\end{align}
+
+For $f_1$, $f_2$, and $f_3$ to be linearly independent, the following condition must satisfy.
+\begin{align}
+    k_1f_1+k_2f_2+k_3f_3=0\label{indeq}
+\end{align}
+$\forall k_i=0$ and $i=$1,2,3
+
+Substitute \eqref{f1},\eqref{f2}, \eqref{f3} in \eqref{indeq}, we get
+\begin{align}
+    k_1+k_2e^{ix}+k_3e^{-ix}=0\label{indeq1}
+\end{align}
+
+Differentiate \eqref{indeq1}, we get
+\begin{align}
+    k_2ie^{ix}-k_3ie^{-ix}=0\label{indeq2}
+\end{align}
+
+Differentiate \eqref{indeq2}, we get
+\begin{align}
+    -k_2e^{ix}-k_3e^{-ix}=0\label{indeq3}
+\end{align}
+
+\eqref{indeq1},\eqref{indeq2}.\eqref{indeq3} form system of linear equations as below
+\begin{align}
+    \vec{F}\vec{k}=0\\
+    \implies\myvec{1&e^{ix}&e^{-ix}\\0&ie^{ix}&-ie^{-ix}\\0&-e^{ix}&-e^{-ix}}\myvec{k_1\\k_2\\k_3}=0
+\end{align}
+
+Now if $\mydet{\Vec{F}}\neq0$, then we can say that columns of matrix $\vec{F}$ are linearly independent.
+\begin{align}
+    \implies\mydet{1&e^{ix}&e^{-ix}\\0&ie^{ix}&-ie^{-ix}\\0&-e^{ix}&-e^{-ix}}&=-2i\\
+    \implies\mydet{\Vec{F}}&\neq0
+\end{align}
+
+Therefore, coloumns of matrix $\vec{F}$ are linearly independent. Then we can also conclude that $f_1$, $f_2$, and $f_3$ are also linearly independent.
+
+Given,
+
+\begin{align}
+    g_1(x)&=1=f_1\label{g1}\\
+    g_2(x)&=\cos{x}=\frac{e^{ix}+e{-ix}}{2}=\frac{f_2}{2}+\frac{f_3}{2}\label{g2}\\
+    g_3(x)&=\sin{x}=\frac{e^{ix}-e{-ix}}{2i}=\frac{f_2}{2i}-\frac{f_3}{2i}\label{g3}
+\end{align}
+
+Now \eqref{g1}, \eqref{g2}, \eqref{g3} can be converted to matrix form as below.
+\begin{align}
+    \myvec{g_1&g_2&g_3}=\myvec{f_1&f_2&f_3}\myvec{1&0&0\\0&\frac{1}{2}&\frac{1}{2i}\\0&\frac{1}{2}&-\frac{1}{2i}}
+\end{align}
+
+Therefore, on comparing with \eqref{eq} we get
+\begin{align}
+    \vec{P}=\myvec{1&0&0\\0&\frac{1}{2}&\frac{1}{2i}\\0&\frac{1}{2}&-\frac{1}{2i}}
+\end{align}
+
+Now we will verify $\Vec{P}$ is invertible or not by row reduction.
+\begin{align}
+    \myvec{1&0&0\\0&\frac{1}{2}&\frac{1}{2i}\\0&\frac{1}{2}&-\frac{1}{2i}}\xleftrightarrow{R_3=R_3-R_2}\myvec{1&0&0\\0&\frac{1}{2}&\frac{1}{2i}\\0&0&-\frac{1}{i}}
+\end{align}
+
+we got rank of matrix $\vec{P}$ is 3 and it is full rank matrix. Therefore, $\vec{P}$ is invertible matrix.
+
+Hence verified it.
+\end{document}
