@@ -2,7 +2,7 @@
 
 \usepackage{setspace}
 \usepackage{gensymb}
-
+\usepackage{enumitem}
 \singlespacing
 
 
@@ -139,13 +139,15 @@ https://github.com/Bharat437/Matrix_Theory/tree/master/Assignment10
 \section{Problem}
 Let $\vec{V}$ be the vector space over the complex numbers of all functions from $\mathbb{R}$ into $\mathbb{C}$, i.e., the space of all complex-valued functions on the real line. Let $f_1(x)=1$, $f_2(x)=e^{ix}$, $f_3(x)=e^{-ix}$.
 
-(a) Prove that $f_1$, $f_2$, and $f_3$ are linearly independent.
+(1) Prove that $f_1$, $f_2$, and $f_3$ are linearly independent.
 
-(b) Let $g_1(x)=1$, $g_2(x)=\cos{x}$, $g_3(x)=\sin{x}$. Find an invertible $3\times3$ matrix $\vec{P}$ such that
+(2) Let $g_1(x)=1$, $g_2(x)=\cos{x}$, $g_3(x)=\sin{x}$. Find an invertible $3\times3$ matrix $\vec{P}$ such that
 \begin{align}
     g_j=\sum\limits_{i=1}^3 \vec{P}_{ij}f_i\label{eq}
 \end{align}
 \section{Solution}
+\begin{enumerate}
+\item
 Given,
 \begin{align}
     f_1(x)=1\label{f1}\\
@@ -163,25 +165,49 @@ Substitute \eqref{f1},\eqref{f2}, \eqref{f3} in \eqref{indeq}, we get
 \begin{align}
     k_1+k_2e^{ix}+k_3e^{-ix}=0\label{indeq1}
 \end{align}
-
-Let $y=e^{ix}$, then equation \eqref{indeq1} becomes as
-\begin{align}
-    k_1+k_2y+\frac{k_3}{y}=0\\
-    \implies k_2y^2+k_1y+k_3=0\label{quadeq}
+We know from Euler formula,
+\begin{align} 
+e^{ix}=\cos{x}+i\sin{x}\label{exp} 
 \end{align}
-
-we can say that \eqref{quadeq} is quadratic equation in y. So we will get two values of y for which the equation can be solved.But $y=e^{ix}$ and x varies in $\mathbb{R}$ then y can take infinite values, so \eqref{quadeq} cannot be equal to zero $\forall y=e^{ix}$ values. 
-
-Therefore, we can say that \eqref{indeq1} is true only when $\forall k_i=0$ and i=1,2,3.
-
-Therefore $f_1$, $f_2$, and $f_3$ are linearly independent.
-\\
+Substitute \eqref{exp} in \eqref{indeq1}, we get
+\begin{align}
+k_1+k_2\cos{x}+ik_2\sin{x}+k_3\cos{x}-ik_3\sin{x}=0\label{subind}
+\end{align}
+Now equate real and imaginary parts of \eqref{subind}, we get
+\begin{align}
+k_1+k_2\cos{x}+k_3\cos{x}=0\label{real}\\
+k_2\sin{x}-k_3\sin{x}=0\label{imag}\\
+\implies k_2=k_3\label{step1}
+\end{align}
+Substitute \eqref{step1} in \eqref{real}, we get
+\begin{align}
+\implies k_1+2k_3\cos{x}=0\label{step2}
+\end{align}
+Differentiating \eqref{step2} with respect to x, we get
+\begin{align}
+\implies -2k_3\sin{x}=0\\
+\implies k_3=0\label{k3}
+\end{align}
+Substitute \eqref{k3} in \eqref{step1} and \eqref{step2}, we get 
+\begin{align}
+    k_3=k_2=0\label{k3k2}\\
+    k_1=0\label{k1}
+\end{align}
+Therefore, from \eqref{k3k2} and \eqref{k1}, we can say that
+\begin{align}
+    k_1f_1+k_2f_2+k_3f_3=0
+\end{align}
+$\forall k_i=0$ and $i=$1,2,3\\
+Hence, $f_1, f_2, and f_3$ are linearly independent
+\item
 Given,
 \begin{align}
     g_1(x)&=1=f_1\label{g1}\\
-    g_2(x)&=\cos{x}=\frac{e^{ix}+e{-ix}}{2}=\frac{f_2}{2}+\frac{f_3}{2}\label{g2}\\
-    g_3(x)&=\sin{x}=\frac{e^{ix}-e{-ix}}{2i}=\frac{f_2}{2i}-\frac{f_3}{2i}=-\frac{i}{2}f_2+\frac{i}{2}f_3\label{g3}
+    g_2(x)&=\cos{x}=\frac{e^{ix}+e{-ix}}{2}=\frac{f_2}{2}+\frac{f_3}{2}\label{g2}
 \end{align}
+\begin{multline}
+    g_3(x)=\sin{x}=\frac{e^{ix}-e{-ix}}{2i}=\frac{f_2}{2i}-\frac{f_3}{2i}\\=-\frac{i}{2}f_2+\frac{i}{2}f_3\label{g3}
+\end{multline}
 
 Now \eqref{g1}, \eqref{g2}, \eqref{g3} can be converted to matrix form as below.
 \begin{align}
@@ -201,4 +227,5 @@ Now we will verify $\Vec{P}$ is invertible or not by row reduction.
 we got rank of matrix $\vec{P}$ is 3 and it is full rank matrix. Therefore, $\vec{P}$ is invertible matrix.
 
 Hence verified it.
+\end{enumerate}
 \end{document}
