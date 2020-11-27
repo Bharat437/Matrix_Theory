@@ -1,0 +1,177 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\singlespacing
+
+
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 11}
+\author{AVVARU BHARAT}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/Bharat437/Matrix_Theory/tree/master/Assignment11
+\end{lstlisting}
+%
+\section{Problem}
+Let $\vec{A}=\myvec{1 & 1\\1 & 0}$ and let $\alpha_n$ and $\beta_n$ denote the two eigenvalues of $\vec{A}^n$ such that $\abs{\alpha_n}\geq\abs{\beta_n}$.\\
+Then
+\begin{enumerate}
+    \item $\alpha_n\rightarrow \infty$ as $n\rightarrow \infty$
+    \item $\beta_n\rightarrow 0$ as $n\rightarrow \infty$
+    \item $\beta_n$ is positive if n is even.
+    \item $\beta_n$ is negative if n is odd.
+\end{enumerate}
+\section{Solution}
+Given
+\begin{align}
+    \vec{A}=\myvec{1 & 1\\1 & 0}
+\end{align}
+Now lets find the eigenvalues of matrix $\vec{A}$.
+\begin{align}
+    \mydet{\vec{A}-\lambda\vec{I}}=0\\
+    \implies \mydet{1-\lambda & 1\\1 & -\lambda}=0\\
+    \implies \lambda^2-\lambda-1=0\label{chareq}
+\end{align}
+On solving \eqref{chareq}, we get 2 eigenvalues $\alpha_1$ and $\beta_1$ such that we satisfy the given condition $\abs{\alpha_1}\geq\abs{\beta_1}$.
+\begin{align}
+    \implies\alpha_1=\frac{1+\sqrt{5}}{2}\quad\beta_1=\frac{1-\sqrt{5}}{2}\label{a1b1}
+\end{align}
+From \eqref{a1b1}, we can say that $\alpha_1>1$ and $-1<\beta_1<0$.\\
+We know that if eigenvalue of $\vec{A}$ is $\lambda$ then eigenvalue of $\vec{A}^n$ is $\lambda^n$.\\
+Therefore in this problem we can say that the eigenvalues $\alpha_n$ and $\beta_n$ of $\vec{A}^n$ are
+\begin{align}
+    \alpha_n=\alpha_1^n\label{an}\\
+    \beta_n=\beta_1^n\label{bn}
+\end{align}
+Now we can conclude that
+\begin{enumerate}
+    \item Since $\alpha_1>1$ , from \eqref{an} we can say that $\alpha_n\rightarrow \infty$ as $n\rightarrow \infty$.
+    \item Since $\abs{\beta_1}<1$, from \eqref{bn} we can say that $\beta_n\rightarrow 0$ as $n\rightarrow \infty$.
+    \item Since $\beta_1$ is negative because $-1<\beta_1<0$, from \eqref{bn} if n is even then $\beta_n$ is positive. and also
+    \item If n is odd then $\beta_n$ is negative.
+\end{enumerate}
+\end{document}
