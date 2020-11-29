@@ -1,15 +1,17 @@
-\documentclass[journal,12pt,twocolumn]{IEEEtran}
-
+\documentclass[journal,12pt]{IEEEtran}
+\usepackage{longtable}
 \usepackage{setspace}
 \usepackage{gensymb}
-\usepackage{enumitem}
 \singlespacing
-
-
 \usepackage[cmex10]{amsmath}
-
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
 \usepackage{amsthm}
-
+\usepackage{mdframed}
 \usepackage{mathrsfs}
 \usepackage{txfonts}
 \usepackage{stfloats}
@@ -29,7 +31,7 @@
 \usepackage{verbatim}
 \usepackage{tfrupee}
 \usepackage[breaklinks=true]{hyperref}
-
+\usepackage{graphicx}
 \usepackage{tkz-euclide}
 
 \usetikzlibrary{calc,math}
@@ -66,7 +68,7 @@ breaklines=true,
 columns=fullflexible
 }
 \begin{document}
-
+\onecolumn
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{problem}{Problem}
@@ -80,6 +82,8 @@ columns=fullflexible
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
 \bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
 \providecommand{\mbf}{\mathbf}
 \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
@@ -124,19 +128,20 @@ columns=fullflexible
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
 \title{Assignment 11}
-\author{AVVARU BHARAT}
+\author{AVVARU BHARAT - EE20MTECH11008}
 \maketitle
-\newpage
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
-Download latex-tikz codes from 
+%
+Download the latex-tikz codes from 
 %
 \begin{lstlisting}
 https://github.com/Bharat437/Matrix_Theory/tree/master/Assignment11
 \end{lstlisting}
+\section{\textbf{Problem}}
+(UGC-dec2016,73) : \\
 %
-\section{Problem}
 Let $\vec{A}=\myvec{1 & 1\\1 & 0}$ and let $\alpha_n$ and $\beta_n$ denote the two eigenvalues of $\vec{A}^n$ such that $\abs{\alpha_n}\geq\abs{\beta_n}$.\\
 Then
 \begin{enumerate}
@@ -145,33 +150,24 @@ Then
     \item $\beta_n$ is positive if n is even.
     \item $\beta_n$ is negative if n is odd.
 \end{enumerate}
-\section{Solution}
-Given
-\begin{align}
-    \vec{A}=\myvec{1 & 1\\1 & 0}
-\end{align}
-Now lets find the eigenvalues of matrix $\vec{A}$.
-\begin{align}
-    \mydet{\vec{A}-\lambda\vec{I}}=0\\
-    \implies \mydet{1-\lambda & 1\\1 & -\lambda}=0\\
-    \implies \lambda^2-\lambda-1=0\label{chareq}
-\end{align}
-On solving \eqref{chareq}, we get 2 eigenvalues $\alpha_1$ and $\beta_1$ such that we satisfy the given condition $\abs{\alpha_1}\geq\abs{\beta_1}$.
-\begin{align}
-    \implies\alpha_1=\frac{1+\sqrt{5}}{2}\quad\beta_1=\frac{1-\sqrt{5}}{2}\label{a1b1}
-\end{align}
-From \eqref{a1b1}, we can say that $\alpha_1>1$ and $-1<\beta_1<0$.\\
-We know that if eigenvalue of $\vec{A}$ is $\lambda$ then eigenvalue of $\vec{A}^n$ is $\lambda^n$.\\
-Therefore in this problem we can say that the eigenvalues $\alpha_n$ and $\beta_n$ of $\vec{A}^n$ are
-\begin{align}
-    \alpha_n=\alpha_1^n\label{an}\\
-    \beta_n=\beta_1^n\label{bn}
-\end{align}
-Now we can conclude that
-\begin{enumerate}
-    \item Since $\alpha_1>1$ , from \eqref{an} we can say that $\alpha_n\rightarrow \infty$ as $n\rightarrow \infty$.
-    \item Since $\abs{\beta_1}<1$, from \eqref{bn} we can say that $\beta_n\rightarrow 0$ as $n\rightarrow \infty$.
-    \item Since $\beta_1$ is negative because $-1<\beta_1<0$, from \eqref{bn} if n is even then $\beta_n$ is positive. and also
-    \item If n is odd then $\beta_n$ is negative.
-\end{enumerate}
+\section{\textbf{Solution}}
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Options} & \textbf{Solutions} & \textbf{True/False}\\
+\hline
+1.& Given&\\&$\vec{A}=\myvec{1 & 1\\1 & 0}$&\\&Now lets find the eigen values of matrix $\vec{A}$&\\&$
+    \mydet{\vec{A}-\lambda\vec{I}}=0$&\\&
+    $\implies \mydet{1-\lambda & 1\\1 & -\lambda}=0$&\\
+    &$\implies \lambda^2-\lambda-1=0$&True\\&On solving we get 2 eigen values&\\& $\alpha_1=\frac{1+\sqrt{5}}{2}\quad\beta_1=\frac{1-\sqrt{5}}{2}$&\\&We know that if eigenvalue of $\vec{A}$ is $\lambda$ then eigenvalue of $\vec{A}^n$ is $\lambda^n$.&\\&In this problem we can say that the eigenvalues $\alpha_n$ and $\beta_n$ of $\vec{A}^n$ are&\\&$\alpha_n=\alpha_1^n\quad\beta_n=\beta_1^n$&\\&Since $\alpha_1>1$ we can say that $\alpha_n\rightarrow \infty$ as $n\rightarrow \infty$.&\\
+\hline
+2.& We got $\beta_1=\frac{1-\sqrt{5}}{2}$ and $\beta_n=\beta_1^n$. &\\&Since $-1<\beta_1<0$,we can say that $\beta_n\rightarrow 0$ as $n\rightarrow \infty$.&True\\
+\hline
+3.&We got $\beta_1=\frac{1-\sqrt{5}}{2}$ and $\beta_n=\beta_1^n$.&\\&Since $\beta_1$ is negative because $-1<\beta_1<0$, if n is even then $\beta_n$ is positive.&True\\
+\hline
+4.&We got $\beta_1=\frac{1-\sqrt{5}}{2}$ and $\beta_n=\beta_1^n$.&\\&Since $\beta_1$ is negative, if n is odd then $\beta_n$ is negative.&True\\
+\hline
+\end{tabular}
+\end{table}
 \end{document}
