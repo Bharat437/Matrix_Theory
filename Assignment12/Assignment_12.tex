@@ -136,6 +136,11 @@ Download latex-tikz codes from
 https://github.com/Bharat437/Matrix_Theory/tree/master/Assignment12
 \end{lstlisting}
 %
+Download Python codes from 
+%
+\begin{lstlisting}
+https://github.com/Bharat437/Matrix_Theory/tree/master/Assignment12/Codes
+\end{lstlisting}
 \section{Problem}
 (Hoffman, page 208, 4) : \\
 %
@@ -163,7 +168,7 @@ Now \eqref{E} can be written as
 Using block matrix multiplication, we get
 \begin{align}
     \implies&\vec{E}=\myvec{\vec{P} & \vec{0}\\\vec{0} & \vec{P}}\myvec{\vec{\Lambda_a} & \vec{\Lambda_b}\\\vec{\Lambda_c} & \vec{\Lambda_d}}\myvec{\vec{P}^{-1} & \vec{0}\\\vec{0} & \vec{P}^{-1}}\\
-    \implies&\vec{E}=\vec{M}\vec{D}\vec{M}^{-1}
+    \implies&\vec{E}=\vec{M}\vec{D}\vec{M}^{-1}\label{Edec}
 \end{align}
 where
 \begin{align}
@@ -175,7 +180,7 @@ Now we will calculate $\det(\vec{E})$,
     &\mydet{\vec{E}}=\mydet{\vec{M}\vec{D}\vec{M}^{-1}}\\
     \implies&\mydet{\vec{E}}=\mydet{\vec{M}}\mydet{\vec{D}}\mydet{\vec{M}^{-1}}\\
     \implies&\mydet{\vec{E}}=\mydet{\vec{M}}\mydet{\vec{D}}\mydet{\vec{M}}^{-1}\\
-    \implies&\mydet{\vec{E}}=\mydet{\vec{D}}\\
+    \implies&\mydet{\vec{E}}=\mydet{\vec{D}}\label{EeqD}\\
     \implies&\mydet{\vec{E}}=\mydet{\vec{\Lambda_a} & \vec{\Lambda_b}\\\vec{\Lambda_c} & \vec{\Lambda_d}}\\
     &=\mydet{\lambda_{1a}&0&\dots&0&\lambda_{1b}&0&\dots&0\\0&\lambda_{2a}&\dots&0&0&\lambda_{2b}&\dots&0\\\vdots&\vdots&\dots&\vdots&\vdots&\vdots&\dots&\vdots\\0&0&\dots&\lambda_{na}&0&0&\dots&\lambda_{nb}\\\lambda_{1c}&0&\dots&0&\lambda_{1d}&0&\dots&0\\0&\lambda_{2c}&\dots&0&0&\lambda_{2d}&\dots&0\\\vdots&\vdots&\dots&\vdots&\vdots&\vdots&\dots&\vdots\\0&0&\dots&\lambda_{nc}&0&0&\dots&\lambda_{nd}}
 \end{align}
@@ -197,7 +202,7 @@ Since it is upper triangular matrix, then $\mydet{\vec{E}}$ will be multiplicati
     \implies\mydet{\vec{E}}=(\lambda_{1a}\lambda_{1d}-\lambda_{1c}\lambda_{1b})\\\times(\lambda_{2a}\lambda_{2d}-\lambda_{2c}\lambda_{2b})\dots(\lambda_{na}\lambda_{nd}-\lambda_{nc}\lambda_{nb})\label{detE}
 \end{multline}
 
-Now we will calculate $\det(\vec{A}\vec{D}-\vec{B}\vec{C})$, substitute \eqref{A} to \eqref{D}
+Now we will calculate $\det(\vec{A}\vec{D}-\vec{B}\vec{C})$ by substituting \eqref{A},\eqref{B},\eqref{C},\eqref{D}
 \begin{align}
     \mydet{\vec{A}\vec{D}-\vec{B}\vec{C}}&=\mydet{\vec{P}\vec{\Lambda_a}\vec{P}^{-1}\vec{P}\vec{\Lambda_d}\vec{P}^{-1}-\vec{P}\vec{\Lambda_b}\vec{P}^{-1}\vec{P}\vec{\Lambda_c}\vec{P}^{-1}}\\
     &=\mydet{\vec{P}\vec{\Lambda_a}\vec{\Lambda_d}\vec{P}^{-1}-\vec{P}\vec{\Lambda_b}\vec{\Lambda_c}\vec{P}^{-1}}\\
@@ -207,7 +212,7 @@ Now we will calculate $\det(\vec{A}\vec{D}-\vec{B}\vec{C})$, substitute \eqref{A
     \mydet{\vec{A}\vec{D}-\vec{B}\vec{C}}&=\mydet{\vec{\Lambda_a}\vec{\Lambda_d}-\vec{\Lambda_b}\vec{\Lambda_c}}\label{adbc1}
 \end{align}
 
-Since$\vec{\Lambda_a}$,$\vec{\Lambda_b}$,$\vec{\Lambda_c}$,$\vec{\Lambda_d}$ are diagonal matrices, we get
+Since $\vec{\Lambda_a}$,$\vec{\Lambda_b}$,$\vec{\Lambda_c}$,$\vec{\Lambda_d}$ are diagonal matrices, we get
 \begin{align}
     \vec{\Lambda_a}\vec{\Lambda_d}=\myvec{\lambda_{1a}\lambda_{1d}&0&\dots&0\\0&\lambda_{2a}\lambda_{2d}&\dots&0\\\vdots&\vdots&\dots&\vdots\\0&0&\dots&\lambda_{na}\lambda_{nd}}\label{lald}\\
     \vec{\Lambda_b}\vec{\Lambda_c}=\myvec{\lambda_{1b}\lambda_{1c}&0&\dots&0\\0&\lambda_{2b}\lambda_{2c}&\dots&0\\\vdots&\vdots&\dots&\vdots\\0&0&\dots&\lambda_{nb}\lambda_{nc}}\label{lblc}\\
@@ -225,6 +230,110 @@ Comparing \eqref{detE} and \eqref{adbcfin} we can say that
 \begin{align}
     \mydet{\vec{E}}=\mydet{\vec{A}\vec{D}-\vec{B}\vec{C}}
 \end{align}
-
 Hence proved.
+\section{\textbf{Example}}
+Let us consider below matrices $\vec{A}$,$\vec{B}$,$\vec{C}$,$\vec{D}$ be $n\times n$ complex matrices which commute.
+\begin{align}
+    \vec{A}=\myvec{1-i&-2\\3&-1-i}\label{exa}\\
+    \vec{B}=\myvec{3-3i&-6\\9&-3-3i}\label{exb}\\
+    \vec{C}=\myvec{7-7i&-14\\21&-7-7i}\label{exc}\\
+    \vec{D}=\myvec{-2+2i&4\\-6&2+2i}\label{exd}
+\end{align}
+Lets find eigenvalues of matrix $\vec{A}$
+\begin{align}
+    &\mydet{\vec{A}-\lambda\vec{I}}=0\\
+    \implies&\mydet{1-i-\lambda&-2\\3&-1-i-\lambda}=0\\
+    \implies&\lambda^2+2\lambda i+4=0\\
+    \implies&\lambda_{1a}=-(1+\sqrt{5})i\quad\lambda_{2a}=(-1+\sqrt{5})i\label{eiga}
+\end{align}
+\eqref{eiga} are eigenvalues of matrix $\vec{A}$.
+
+The eigenvectors of matrix $\vec{A}$ are
+\begin{align}
+    \vec{v_1}=\myvec{\frac{-1+\sqrt{5}i}{3}\\1}\quad\vec{v_2}=\myvec{\frac{-1-\sqrt{5}i}{3}\\1}
+\end{align}
+Since matrices $\vec{A}$,$\vec{B}$,$\vec{C}$,$\vec{D}$ commute, from \eqref{exa}, \eqref{exb}, \eqref{exc}, \eqref{exd} we can say that
+\begin{align}
+    \vec{B}&=3\vec{A}\\
+    \vec{C}&=7\vec{A}\\
+    \vec{D}&=-2\vec{A}
+\end{align}
+
+Then the eigenvalues of matrices $\vec{B}$,$\vec{C}$,$\vec{D}$ are
+\begin{align}
+    \lambda_{1b}=-3(1+\sqrt{5})i\quad\lambda_{2b}=3(-1+\sqrt{5})i\label{eigb}\\
+    \lambda_{1c}=-7(1+\sqrt{5})i\quad\lambda_{2c}=7(-1+\sqrt{5})i\label{eigc}\\
+    \lambda_{1d}=2(1+\sqrt{5}+1)i\quad\lambda_{2d}=-2(-1+\sqrt{5})i\label{eigd}
+\end{align}
+But the eigenvectors of matrices $\vec{B}$,$\vec{C}$,$\vec{D}$ are same as of matrix $\vec{A}$.\\
+The eigenvalue decomposition of matrices $\vec{A}$,$\vec{B}$,$\vec{C}$,$\vec{D}$ is done as in \eqref{A}, \eqref{B}, \eqref{C}, \eqref{D}. Here eigenvector matrix $\vec{P}$ and $\vec{\Lambda_a}$,$\vec{\Lambda_b}$,$\vec{\Lambda_c}$,$\vec{\Lambda_d}$ are
+\begin{align}
+    \vec{P}=\myvec{\frac{-1+\sqrt{5}i}{3}&\frac{-1-\sqrt{5}i}{3}\\1&1}\\
+    \vec{\Lambda_a}=\myvec{mi&0\\0&ni}\label{exla}\\
+    \vec{\Lambda_b}=\myvec{3mi&0\\0&3ni}\label{exlb}\\
+    \vec{\Lambda_c}=\myvec{7mi&0\\0&7ni}\label{exlc}\\
+    \vec{\Lambda_d}=\myvec{-2mi&0\\0&-2ni}\label{exld}
+\end{align}
+where
+\begin{align}
+    m=-(1+\sqrt{5})\quad n=(-1+\sqrt{5})\label{mn}
+\end{align}
+From \eqref{Edec}, we got
+\begin{align}
+    \vec{E}=\vec{M}\vec{D}\vec{M}^{-1}
+\end{align}
+where
+\begin{align}
+    \vec{M}&=\myvec{\vec{P} & \vec{0}\\\vec{0} & \vec{P}}\\
+    &=\myvec{\frac{-1+\sqrt{5}i}{3}&\frac{-1-\sqrt{5}i}{3}&0&0\\1&1&0&0\\0&0&\frac{-1+\sqrt{5}i}{3}&\frac{-1-\sqrt{5}i}{3}\\0&0&1&1}
+\end{align}
+\begin{multline}
+    \vec{D}=\myvec{\vec{\Lambda_a} & \vec{\Lambda_b}\\\vec{\Lambda_c} & \vec{\Lambda_d}}\\
+    =\myvec{mi&0&3mi&0\\0&ni&0&3ni\\7mi&0&-2mi&0\\0&7ni&0&-2ni}
+\end{multline}
+Now we will calculate $\det(E)$, from \eqref{EeqD} we got
+\begin{align}
+    \mydet{\vec{E}}&=\mydet{\vec{D}}\\
+    &=\mydet{mi&0&3mi&0\\0&ni&0&3ni\\7mi&0&-2mi&0\\0&7ni&0&-2ni}
+\end{align}
+Using row reduction technique,
+\begin{align}
+    \mydet{mi&0&3mi&0\\0&ni&0&3ni\\7mi&0&-2mi&0\\0&7ni&0&-2ni}\\
+    \xleftrightarrow[]{R_3\leftarrow R_3-7R_1}\mydet{mi&0&3mi&0\\0&ni&0&3ni\\0&0&-23mi&0\\0&7ni&0&-2ni}\\
+    \xleftrightarrow[]{R_4\leftarrow R_4-7R_2}\mydet{mi&0&3mi&0\\0&ni&0&3ni\\0&0&-23mi&0\\0&0&0&-23ni}
+\end{align}
+Now
+\begin{align}
+    \mydet{\vec{E}}=\mydet{mi&0&3mi&0\\0&ni&0&3ni\\0&0&-23mi&0\\0&0&0&-23ni}\\
+    \implies\mydet{\vec{E}}=529m^2n^2\label{exdet1}
+\end{align}
+Substitute \eqref{mn} in \eqref{exdet1}, we get
+\begin{align}
+    \mydet{\vec{E}}=529(1+\sqrt{5})^2(-1+\sqrt{5})^2=8464\label{exdetfin}
+\end{align}
+Now we will calculate $\det(\vec{A}\vec{D}-\vec{B}\vec{C})$, from \eqref{adbc1} we got
+\begin{align}
+    \mydet{\vec{A}\vec{D}-\vec{B}\vec{C}}&=\mydet{\vec{\Lambda_a}\vec{\Lambda_d}-\vec{\Lambda_b}\vec{\Lambda_c}}\label{exadbc1}
+\end{align}
+Using \eqref{exla}, \eqref{exlb}, \eqref{exlc}, \eqref{exld} we get
+\begin{align}
+    \vec{\Lambda_a}\vec{\Lambda_d}&=\myvec{mi&0\\0&ni}\myvec{-2mi&0\\0&-2ni}\\
+    \implies\vec{\Lambda_a}\vec{\Lambda_d}&=\myvec{2m^2&0\\0&2n^2}\label{exlald}\\
+    \vec{\Lambda_b}\vec{\Lambda_c}&=\myvec{3mi&0\\0&3ni}\myvec{7mi&0\\0&7ni}\\
+    \implies\vec{\Lambda_b}\vec{\Lambda_c}&=\myvec{-21m^2&0\\0&-21n^2}\label{exlblc}
+\end{align}
+Substitute \eqref{exlald} and \eqref{exlblc} in \eqref{exadbc1}, we get
+\begin{align}
+    \mydet{\vec{A}\vec{D}-\vec{B}\vec{C}}&=\mydet{\myvec{2m^2&0\\0&2n^2}-\myvec{-21m^2&0\\0&-21n^2}}\\
+    &=\mydet{23m^2&0\\0&23n^2}\\
+    &=529m^2n^2\label{exadbc1}
+\end{align}
+Substitute \eqref{mn} in \eqref{exadbc1}, we get
+\begin{multline}
+    \mydet{\vec{A}\vec{D}-\vec{B}\vec{C}}=529(1+\sqrt{5})^2(-1+\sqrt{5})^2\\=8464\label{exadbcfin}
+\end{multline}
+Comparing \eqref{exdetfin} and \eqref{exadbcfin}, we get
+\begin{align}
+    \mydet{\vec{E}}=\mydet{\vec{A}\vec{D}-\vec{B}\vec{C}}
+\end{align}
 \end{document}
