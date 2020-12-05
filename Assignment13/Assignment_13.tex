@@ -142,7 +142,7 @@ https://github.com/Bharat437/Matrix_Theory/tree/master/Assignment13
 \section{\textbf{Problem}}
 (UGC,Dec 2018,77) : \\
 %
-Define a real values function $\vec{B}$ on $\mathbb{R}^2\times\mathbb{R}^2$ as follows. If $v=(x_1,x_2)$, $w=(y_1,y_2)$ belong to $\mathbb{R}^2$ define $\vec{B}(u,w)=x_1y_1-x_1y_2-x_2y_1+4x_2y_2$. Let $v_0=(1,0)$ and let $\vec{W}=\cbrak{v\in\mathbb{R}^2:\vec{B}(v_0,v)=0}$. Then $\vec{W}$
+Define a real values function $\vec{B}$ on $\mathbb{R}^2\times\mathbb{R}^2$ as follows. If $v=(x_1,x_2)$, $w=(y_1,y_2)$ belong to $\mathbb{R}^2$ define $\vec{B}(v,w)=x_1y_1-x_1y_2-x_2y_1+4x_2y_2$. Let $v_0=(1,0)$ and let $\vec{W}=\cbrak{v\in\mathbb{R}^2:\vec{B}(v_0,v)=0}$. Then $\vec{W}$
 \begin{enumerate}
     \item is not a subspace of $\mathbb{R}^2$
     \item equals $\cbrak{(0,0)}$
@@ -167,12 +167,18 @@ Define a real values function $\vec{B}$ on $\mathbb{R}^2\times\mathbb{R}^2$ as f
 \textbf{Statement}&\textbf{Observations}\\
 \hline
 Given&\parbox{10cm}{\begin{align}
-    \vec{W}&=\cbrak{v\in\mathbb{R}^2:\vec{B}(v_0,v)=0}\label{W}\\
-    v_0&=(1,0)\label{v0}\\
-    \vec{B}(u,w)&=x_1y_1-x_1y_2-x_2y_1+4x_2y_2\label{B}
-\end{align}}\\&From \eqref{v0} and \eqref{B}, we will calculate $\vec{B}(v_0,v)$\\&\parbox{10cm}{\begin{align}
-    \vec{B}(v_0,v)=y_1-y_2\label{Bv0}
-\end{align}}\\&$\vec{B}(v_0,v)=0$ if and only if $y_1=y_2$\\&Therefore, $\vec{W}$ consists points which have same x and y\\&coordinates.\\
+    \vec{W}&=\cbrak{\vec{v}\in\mathbb{R}^2:\vec{B}(\vec{v_0},\vec{v})=0}\label{W}\\
+    \vec{v}&=\myvec{x_1\\x_2}\label{v}\\
+    \vec{w}&=\myvec{y_1\\y_2}\label{w}\\
+    \vec{v_0}&=\myvec{1\\0}\label{v0}\\
+    \vec{B}(\vec{v},\vec{w})&=x_1y_1-x_1y_2-x_2y_1+4x_2y_2\label{B}
+\end{align}}\\&we will express \eqref{B} in quadratic form.\\&\parbox{10cm}{\begin{align}
+    \vec{B}(\vec{v},\vec{w})=\vec{v}^T\myvec{1&-1\\-1&4}\vec{w}\label{Bq}
+\end{align}}\\&From \eqref{v}, \eqref{v0}, \eqref{Bq} we will calculate $\vec{B}(\vec{v_0},\vec{v})$\\&\parbox{10cm}{\begin{align}
+    \implies\vec{B}(\vec{v_0},\vec{v})&=\vec{v_0}^T\myvec{1&-1\\-1&4}\vec{v}\\
+    \implies\vec{B}(\vec{v_0},\vec{v})&=\myvec{1&0}\myvec{1&-1\\-1&4}\myvec{x_1\\x_2}\\
+    \implies\vec{B}(\vec{v_0},\vec{v})&=x_1-x_2\label{Bv0}
+\end{align}}\\&$\vec{B}(\vec{v_0},\vec{v})=0$ if and only if $x_1=x_2$\\&Therefore, $\vec{W}$ consists points which have same x and y\\&coordinates.\\
 \hline
 \caption{Observations}
 \label{obs}
@@ -183,32 +189,36 @@ Given&\parbox{10cm}{\begin{align}
 \endhead
 \textbf{Option}&\textbf{Solution}&\textbf{True/False}\\
 \hline
-1.&Now we will see whether $\vec{W}$ is a subspace or not.&\\&Let $\vec{\alpha}=(m,m)$ and $\vec{\beta}=(n,n)$ be two pair of vectors in $\vec{W}$ where $\vec{\alpha}$, $\vec{\beta}\in\mathbb{R}^2$&\\& and c be a scalar value in $\mathbb{R}$.&\\&Now we will see whether the vector $c\vec{\alpha}+\vec{\beta}$ is in $\vec{W}$ or not.&\\
+1.&Now we will see whether $\vec{W}$ is a subspace or not.&\\&Let $\vec{\alpha}=\myvec{m\\m}$ and $\vec{\beta}=\myvec{n\\n}$ be two pair of vectors in $\vec{W}$ where $\vec{\alpha}$, $\vec{\beta}\in\mathbb{R}^2$&\\& and c be a scalar value in $\mathbb{R}$.&\\&Now we will see whether the vector $c\vec{\alpha}+\vec{\beta}$ is in $\vec{W}$ or not.&\\
 &Here&\\&\parbox{13cm}{\begin{align}
-    c\vec{\alpha}+\vec{\beta}=(cm+n,cm+n)
-\end{align}}&\\&Now we will calculate $\vec{B}(v_0,c\vec{\alpha}+\vec{\beta})$ using \eqref{Bv0}&False\\&\parbox{13cm}{\begin{align}
-    \implies\vec{B}(v_0,c\vec{\alpha}+\vec{\beta})=(cm+n)-(cm+n)\\
-    \implies\vec{B}(v_0,c\vec{\alpha}+\vec{\beta})=0\label{p1}
+    c\vec{\alpha}+\vec{\beta}=\myvec{cm+n\\cm+n}
+\end{align}}&\\&Now we will calculate $\vec{B}(\vec{v_0},c\vec{\alpha}+\vec{\beta})$ using \eqref{Bq}&False\\&\parbox{13cm}{\begin{align}
+    \implies\vec{B}(\vec{v_0},c\vec{\alpha}+\vec{\beta})&=\myvec{1&0}\myvec{1&-1\\-1&4}\myvec{cm+n\\cm+n}\\
+    &=(cm+n)-(cm+n)\\
+    \implies\vec{B}(\vec{v_0},c\vec{\alpha}+\vec{\beta})&=0\label{p1}
 \end{align}}&\\&From \eqref{p1}, we can say that vector $c\vec{\alpha}+\vec{\beta}\in\vec{W}$.&\\&Therefore, $\vec{W}$ is a subspace of $\mathbb{R}$&\\
 \hline
-2.&From Table \ref{obs}, we got $\vec{W}$ consists points which have same x and y &\\&coordinates.&\\&For example vector $\vec{u}=(1,1)\in\mathbb{R}^2$, we will calculate $\vec{B}(v_0,u)$&\\&\parbox{13cm}{\begin{align}
-    \implies\vec{B}(v_0,u)=1-1=0\label{p2}
+2.&From Table \ref{obs}, we got $\vec{W}$ consists points which have same x and y &\\&coordinates.&\\&For example vector $\vec{u}=\myvec{1\\1}\in\mathbb{R}^2$, we will calculate $\vec{B}(\vec{v_0},\vec{u})$&\\&\parbox{13cm}{\begin{align}
+    \implies\vec{B}(\vec{v_0},\vec{u})=\myvec{1&0}\myvec{1&-1\\-1&4}\myvec{1\\1}=1-1=0\label{p2}
 \end{align}}&False\\&From \eqref{p2}, we can say that vector $\vec{u}\in\vec{W}$.&\\&Therefore, $\vec{W}\neq\cbrak{(0,0)}$&\\
 \hline
-3.&Let us consider a point on y-axis, $p=(3,0)$ we will calculate $\vec{B}(v_0,p)$&\\&\parbox{13cm}{\begin{align}
-    \implies\vec{B}(v_0,p)=3-0=3\\
-    \implies\vec{B}(v_0,p)\neq0\label{p3}
-\end{align}}&False\\&From \eqref{p3}, we can say that vector $\vec{p}\not\in\vec{W}$.&\\&Therefore, all points in $\vec{W}$ are not on y-axis.&\\
+3.&Let us consider a vector on y-axis, $\vec{p}=\myvec{3\\0}$ we will calculate $\vec{B}(\vec{v_0},\vec{p})$&\\&\parbox{13cm}{\begin{align}
+    \implies\vec{B}(\vec{v_0},\vec{p})&=\myvec{1&0}\myvec{1&-1\\-1&4}\myvec{3\\0}=3-0=3\\
+    \implies\vec{B}(\vec{v_0},\vec{p})&\neq0\label{p3}
+\end{align}}&False\\&From \eqref{p3}, we can say that vector $\vec{p}\not\in\vec{W}$.&\\&Therefore, all vectors in $\vec{W}$ are not on y-axis.&\\
 \hline
 4.&The direction vector $\vec{m}$ and normal vector $\vec{n}$ of the line through $\vec{M}=(0,0)$&\\& and $\vec{N}=(1,1)$ is&\\&\parbox{13cm}{\begin{align}
-    \vec{m}=\myvec{1\\1}-\myvec{0\\0}=\myvec{1\\1}\\
-    \vec{n}=\myvec{0&-1\\1&0}\vec{m}=\myvec{0&-1\\1&0}\myvec{1\\1}\\
-    \implies\vec{n}=\myvec{-1\\1}
+    \vec{m}&=\myvec{1\\1}-\myvec{0\\0}=\myvec{1\\1}\\
+    \vec{n}&=\myvec{0&-1\\1&0}\vec{m}=\myvec{0&-1\\1&0}\myvec{1\\1}\\
+    \implies\vec{n}&=\myvec{-1\\1}
 \end{align}}&\\&The equation of line can be obtained as&True\\&\parbox{13cm}{\begin{align}
-    \vec{n}^T(\vec{x}-\vec{M})=0\\
-    \implies\myvec{-1&1}\left(\vec{x}-\myvec{0\\0}\right)=0\\
-    \implies\myvec{-1&1}\vec{x}=0\label{leq}
-\end{align}}&\\&\eqref{leq} is the equation of line. Therefore, We can say that the line passes&\\& through the points which is having same x and y coordinates.&\\&Therefore From Table \ref{obs}, all points in $\vec{W}$ are on the line passing through $\vec{M}$&\\& and $\vec{N}$&\\
+    \vec{n}^T(\vec{x}-\vec{M})&=0\\
+    \implies\myvec{-1&1}\left(\vec{x}-\myvec{0\\0}\right)&=0\\
+    \implies\myvec{-1&1}\vec{x}&=0\label{leq}\\
+    \implies\myvec{1&0}\myvec{1&-1\\-1&4}\vec{x}&=0\\
+    \implies\vec{v_0}^T\myvec{1&-1\\-1&4}\vec{x}&=0\\
+    \implies\vec{B}(\vec{v_0},\vec{x})&=0\label{p4}
+\end{align}}&\\&\eqref{leq} is the equation of line and From \eqref{p4} we can say that $\vec{x}\in\vec{W}$.&\\&Therefore, the vectors in $\vec{W}$ are on the line passing through (0,0) and (1,1).&\\
 \hline
 \caption{Solution}
 \label{sol}
