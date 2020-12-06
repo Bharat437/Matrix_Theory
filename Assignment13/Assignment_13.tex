@@ -166,19 +166,26 @@ Define a real values function $\vec{B}$ on $\mathbb{R}^2\times\mathbb{R}^2$ as f
 \endhead
 \textbf{Statement}&\textbf{Observations}\\
 \hline
-Given&\parbox{10cm}{\begin{align}
+Given&\parbox{15cm}{\begin{align}
     \vec{W}&=\cbrak{\vec{v}\in\mathbb{R}^2:\vec{B}(\vec{v_0},\vec{v})=0}\label{W}\\
     \vec{v}&=\myvec{x_1\\x_2}\label{v}\\
     \vec{w}&=\myvec{y_1\\y_2}\label{w}\\
     \vec{v_0}&=\myvec{1\\0}\label{v0}\\
     \vec{B}(\vec{v},\vec{w})&=x_1y_1-x_1y_2-x_2y_1+4x_2y_2\label{B}
-\end{align}}\\&we will express \eqref{B} in quadratic form.\\&\parbox{10cm}{\begin{align}
+\end{align}}\\&we will express \eqref{B} in quadratic form.\\&\parbox{15cm}{\begin{align}
     \vec{B}(\vec{v},\vec{w})=\vec{v}^T\myvec{1&-1\\-1&4}\vec{w}\label{Bq}
-\end{align}}\\&From \eqref{v}, \eqref{v0}, \eqref{Bq} we will calculate $\vec{B}(\vec{v_0},\vec{v})$\\&\parbox{10cm}{\begin{align}
+\end{align}}\\&From \eqref{v}, \eqref{v0}, \eqref{Bq} we will calculate $\vec{B}(\vec{v_0},\vec{v})$\\&\parbox{15cm}{\begin{align}
     \implies\vec{B}(\vec{v_0},\vec{v})&=\vec{v_0}^T\myvec{1&-1\\-1&4}\vec{v}\\
     \implies\vec{B}(\vec{v_0},\vec{v})&=\myvec{1&0}\myvec{1&-1\\-1&4}\myvec{x_1\\x_2}\\
-    \implies\vec{B}(\vec{v_0},\vec{v})&=x_1-x_2\label{Bv0}
-\end{align}}\\&$\vec{B}(\vec{v_0},\vec{v})=0$ if and only if $x_1=x_2$\\&Therefore, $\vec{W}$ consists points which have same x and y\\&coordinates.\\
+    \implies\vec{B}(\vec{v_0},\vec{v})&=\myvec{1&-1}\myvec{x_1\\x_2}\label{Bv0}
+\end{align}}\\&Now we find the basis vector for $\vec{W}$, which is the basis vector of null space of $\vec{B}(\vec{v_0},\vec{v})$.\\&\parbox{15cm}{\begin{align}
+    \implies&\vec{B}(\vec{v_0},\vec{v})=0\\
+    \implies&\myvec{1&-1}\myvec{x_1\\x_2}=0\\
+    \implies&\myvec{1&-1}\myvec{x_1\\x_2}=0\\
+    \implies&x_1=x_2
+\end{align}}\\&Therefore, the basis vector for $\vec{W}$ is\\&\parbox{15cm}{\begin{align}
+    \vec{b}=\myvec{1\\1}\label{basis}
+\end{align}}\\
 \hline
 \caption{Observations}
 \label{obs}
@@ -196,29 +203,22 @@ Given&\parbox{10cm}{\begin{align}
     \implies\vec{B}(\vec{v_0},c\vec{\alpha}+\vec{\beta})&=\myvec{1&0}\myvec{1&-1\\-1&4}\myvec{cm+n\\cm+n}\\
     &=(cm+n)-(cm+n)\\
     \implies\vec{B}(\vec{v_0},c\vec{\alpha}+\vec{\beta})&=0\label{p1}
-\end{align}}&\\&From \eqref{p1}, we can say that vector $c\vec{\alpha}+\vec{\beta}\in\vec{W}$.&\\&Therefore, $\vec{W}$ is a subspace of $\mathbb{R}$&\\
+\end{align}}&\\&From \eqref{p1}, we can say that vector $c\vec{\alpha}+\vec{\beta}\in\vec{W}$.&\\&Therefore, $\vec{W}$ is a subspace of $\mathbb{R}^2$&\\
 \hline
-2.&From Table \ref{obs}, we got $\vec{W}$ consists points which have same x and y &\\&coordinates.&\\&For example vector $\vec{u}=\myvec{1\\1}\in\mathbb{R}^2$, we will calculate $\vec{B}(\vec{v_0},\vec{u})$&\\&\parbox{13cm}{\begin{align}
-    \implies\vec{B}(\vec{v_0},\vec{u})=\myvec{1&0}\myvec{1&-1\\-1&4}\myvec{1\\1}=1-1=0\label{p2}
-\end{align}}&False\\&From \eqref{p2}, we can say that vector $\vec{u}\in\vec{W}$.&\\&Therefore, $\vec{W}\neq\cbrak{(0,0)}$&\\
+2.&From Table \ref{obs}, we got $\vec{W}$ contains the vectors which are all linear &\\&combination of basis vector $\vec{b}$ in \eqref{basis}.&\\&Therefore,&False\\&\parbox{13cm}{\begin{align}
+    \vec{W}\neq\cbrak{(0,0)}
+\end{align}}&\\
 \hline
-3.&Let us consider a vector on y-axis, $\vec{p}=\myvec{3\\0}$ we will calculate $\vec{B}(\vec{v_0},\vec{p})$&\\&\parbox{13cm}{\begin{align}
-    \implies\vec{B}(\vec{v_0},\vec{p})&=\myvec{1&0}\myvec{1&-1\\-1&4}\myvec{3\\0}=3-0=3\\
-    \implies\vec{B}(\vec{v_0},\vec{p})&\neq0\label{p3}
-\end{align}}&False\\&From \eqref{p3}, we can say that vector $\vec{p}\not\in\vec{W}$.&\\&Therefore, all vectors in $\vec{W}$ are not on y-axis.&\\
+3.&Let us consider a vector on y-axis&\\&\parbox{13cm}{\begin{align}
+    \vec{p}=\myvec{3\\0}
+\end{align}}&\\&Here&\\&\parbox{13cm}{\begin{align}
+    \vec{p}\neq k\vec{b}
+\end{align}}&False\\&for any $k\in\mathbb{R}$&\\&The vector $\vec{p}$ can not be written in terms of the basis vector $\vec{b}$. Then $\vec{p}\not\in\vec{W}.$&\\&Therefore, the vectors in $\vec{W}$ is not y-axis.&\\
 \hline
-4.&The direction vector $\vec{m}$ and normal vector $\vec{n}$ of the line through $\vec{M}=(0,0)$&\\& and $\vec{N}=(1,1)$ is&\\&\parbox{13cm}{\begin{align}
-    \vec{m}&=\myvec{1\\1}-\myvec{0\\0}=\myvec{1\\1}\\
-    \vec{n}&=\myvec{0&-1\\1&0}\vec{m}=\myvec{0&-1\\1&0}\myvec{1\\1}\\
-    \implies\vec{n}&=\myvec{-1\\1}
-\end{align}}&\\&The equation of line can be obtained as&True\\&\parbox{13cm}{\begin{align}
-    \vec{n}^T(\vec{x}-\vec{M})&=0\\
-    \implies\myvec{-1&1}\left(\vec{x}-\myvec{0\\0}\right)&=0\\
-    \implies\myvec{-1&1}\vec{x}&=0\label{leq}\\
-    \implies\myvec{1&0}\myvec{1&-1\\-1&4}\vec{x}&=0\\
-    \implies\vec{v_0}^T\myvec{1&-1\\-1&4}\vec{x}&=0\\
-    \implies\vec{B}(\vec{v_0},\vec{x})&=0\label{p4}
-\end{align}}&\\&\eqref{leq} is the equation of line and From \eqref{p4} we can say that $\vec{x}\in\vec{W}$.&\\&Therefore, the vectors in $\vec{W}$ are on the line passing through (0,0) and (1,1).&\\
+4.&There is only one basis vector $\vec{b}$ for $\vec{W}$. Therefore the vectors in $\vec{W}$ forms &\\&a straight line in vector space $\mathbb{R}^2$.&\\&Since,&\\&\parbox{13cm}{\begin{align}
+    \myvec{0\\0}=0\vec{b}\\
+    \myvec{1\\1}=1\vec{b}
+\end{align}}&True\\&Therefore, the line passes through (0,0) and (1,1).&\\
 \hline
 \caption{Solution}
 \label{sol}
