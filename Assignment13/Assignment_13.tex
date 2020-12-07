@@ -185,6 +185,8 @@ Given&\parbox{15cm}{\begin{align}
     \implies&x_1=x_2
 \end{align}}\\&Therefore, the basis vector for $\vec{W}$ is\\&\parbox{15cm}{\begin{align}
     \vec{b}=\myvec{1\\1}\label{basis}
+\end{align}}\\&Therefore\\&\parbox{15cm}{\begin{align}
+    \vec{W}=\cbrak{k\vec{b}:\forall k\in\mathbb{R}}\label{Wkb}
 \end{align}}\\
 \hline
 \caption{Observations}
@@ -198,14 +200,11 @@ Given&\parbox{15cm}{\begin{align}
 \hline
 1.&Now we will see whether $\vec{W}$ is a subspace or not.&\\&Let $\vec{\alpha}=\myvec{m\\m}$ and $\vec{\beta}=\myvec{n\\n}$ be two pair of vectors in $\vec{W}$ where $\vec{\alpha}$, $\vec{\beta}\in\mathbb{R}^2$&\\& and c be a scalar value in $\mathbb{R}$.&\\&Now we will see whether the vector $c\vec{\alpha}+\vec{\beta}$ is in $\vec{W}$ or not.&\\
 &Here&\\&\parbox{13cm}{\begin{align}
-    c\vec{\alpha}+\vec{\beta}=\myvec{cm+n\\cm+n}
-\end{align}}&\\&Now we will calculate $\vec{B}(\vec{v_0},c\vec{\alpha}+\vec{\beta})$ using \eqref{Bq}&False\\&\parbox{13cm}{\begin{align}
-    \implies\vec{B}(\vec{v_0},c\vec{\alpha}+\vec{\beta})&=\myvec{1&0}\myvec{1&-1\\-1&4}\myvec{cm+n\\cm+n}\\
-    &=(cm+n)-(cm+n)\\
-    \implies\vec{B}(\vec{v_0},c\vec{\alpha}+\vec{\beta})&=0\label{p1}
-\end{align}}&\\&From \eqref{p1}, we can say that vector $c\vec{\alpha}+\vec{\beta}\in\vec{W}$.&\\&Therefore, $\vec{W}$ is a subspace of $\mathbb{R}^2$&\\
+    &c\vec{\alpha}+\vec{\beta}=\myvec{cm+n\\cm+n}=(cm+n)\myvec{1\\1}\\
+    \implies &c\vec{\alpha}+\vec{\beta}=(cm+n)\vec{b}\label{p1}
+\end{align}}&\\&From \eqref{p1}, $(cm+n)\in\mathbb{R}$ and we can say that the vector $c\vec{\alpha}+\vec{\beta}\in\vec{W}$.&\\&Therefore, $\vec{W}$ is a subspace of $\mathbb{R}^2$&\\
 \hline
-2.&From Table \ref{obs}, we got $\vec{W}$ contains the vectors which are all linear &\\&combination of basis vector $\vec{b}$ in \eqref{basis}.&\\&Therefore,&False\\&\parbox{13cm}{\begin{align}
+2.&From Table \ref{obs}, we got $\vec{W}$ contains the vectors which are all linear &\\&combination of basis vector $\vec{b}$ as shown in \eqref{Wkb} \eqref{basis}.&\\&Therefore,&False\\&\parbox{13cm}{\begin{align}
     \vec{W}\neq\cbrak{(0,0)}
 \end{align}}&\\
 \hline
