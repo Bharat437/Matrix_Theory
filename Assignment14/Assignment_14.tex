@@ -157,11 +157,15 @@ Let $\vec{V}$ be a finite dimensional vector space over $\mathbb{R}$. Let $T:\ve
 $Range(\vec{T})$&It is column-space of linear operator $\vec{T}$.\\&\parbox{15cm}{\begin{align}
     \vec{T}(\vec{x})=\vec{v}
     \implies\vec{Ax}=\vec{v}
-\end{align}}\\&where $\vec{x}$,$\vec{v}\in\vec{V}$ and columns of matrix $\vec{A}$ is the basis of column-space of linear\\&operator $\vec{T}$.\\
+\end{align}}\\&where $\vec{x}$,$\vec{v}\in\vec{V}$ and We can also say that\\&\parbox{15cm}{\begin{align}
+    Range(\vec{T})=C(\vec{A})\label{R}
+\end{align}}\\&where $C(\vec{A})$ is column space of $\vec{A}$.\\
 \hline$Kernel(\vec{T})$&It is null-space of linear operator $\vec{T}$.\\&\parbox{15cm}{\begin{align}
     \vec{T}(\vec{x})=0
     \implies\vec{Ax}=0
-\end{align}}\\&where $\vec{x}\in\vec{V}$ and matrix $\vec{A}$ is same as before.\\
+\end{align}}\\&where $\vec{x}\in\vec{V}$ and matrix $\vec{A}$ is same as before. We can also say that\\&\parbox{15cm}{\begin{align}
+    Kernel(\vec{T})=N(\vec{A})\label{K}
+\end{align}}\\&where $N(\vec{A})$ is null space of $\vec{A}$.\\
 \hline$rank(\vec{T})$&\parbox{15cm}{\begin{align}
     rank(\vec{T})=rank(\vec{A})
 \end{align}}\\
@@ -174,7 +178,6 @@ $Range(\vec{T})$&It is column-space of linear operator $\vec{T}$.\\&\parbox{15cm
 \caption{Definitions and theorem used}
 \label{deftab}
 \end{longtable}
-\newpage
 \section{\textbf{Solution}}
 \renewcommand{\thetable}{2}
 \begin{longtable}{|l|l|}
@@ -213,7 +216,7 @@ Given&$\vec{V}$ is a finite dimensional space over $\mathbb{R}$ and $T:\vec{V}\r
     \implies Range(\vec{T})=Range(\vec{T}^2)\label{res2}
 \end{align}}&\\
 \hline
-3&From table \ref{deftab}, \eqref{p1} and \eqref{p2} we can that the r number of basis vectors&\\&of column space of linear operator $\vec{T}$ will form r-dimensional space which&\\&consists zero vector and n number of basis vectors of null space of linear&True\\&operator $\vec{T}$ will form n-dimensional space which consists zero vector.&\\&\parbox{13cm}{\begin{align}
+3&From \eqref{p1}, \eqref{p2} and also we can say that column space $C(\vec{A})$ and null&\\&space $N(\vec{A})$ are r-dimensional space and n-dimensional space respectively&\\&which will intersect only at origin(zero vector).&\\&And also from \eqref{R} and \eqref{K}, we get&\\&\parbox{13cm}{\begin{align}
     \implies Kernel(\vec{T})\cap Range(\vec{T})=\cbrak{0}\label{res3}
 \end{align}}&\\
 \hline
