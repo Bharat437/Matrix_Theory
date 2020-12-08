@@ -1,0 +1,227 @@
+\documentclass[journal,12pt]{IEEEtran}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+\onecolumn
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 14}
+\author{AVVARU BHARAT - EE20MTECH11008}
+\maketitle
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+%
+Download the latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/Bharat437/Matrix_Theory/tree/master/Assignment14
+\end{lstlisting}
+\section{\textbf{Problem}}
+(UGC,Dec 2015,74) : \\
+%
+Let $\vec{V}$ be a finite dimensional vector space over $\mathbb{R}$. Let $T:\vec{V}\rightarrow\vec{V}$ be a linear transformation such that $rank(\vec{T}^2)=rank(\vec{T})$. Then,
+\begin{enumerate}
+    \item $Kernel(\vec{T}^2)=Kernel(\vec{T})$
+    \item $Range(\vec{T}^2)=Range(\vec{T})$
+    \item $Kernel(\vec{T})\cap Range(\vec{T})=\cbrak{0}$.
+    \item $Kernel(\vec{T}^2)\cap Range(\vec{T}^2)=\cbrak{0}$.
+\end{enumerate}
+\section{\textbf{Explanation}}
+\renewcommand{\thetable}{1}
+\begin{longtable}{|l|l|}
+\hline
+\endhead
+$Range(\vec{T})$&It is column-space of linear operator $\vec{T}$.\\&\parbox{15cm}{\begin{align}
+    \vec{T}(\vec{x})=\vec{v}
+    \implies\vec{Ax}=\vec{v}
+\end{align}}\\&where $\vec{x}$,$\vec{v}\in\vec{V}$ and columns of matrix $\vec{A}$ is the basis of column-space of linear\\&operator $\vec{T}$.\\
+\hline$Kernel(\vec{T})$&It is null-space of linear operator $\vec{T}$.\\&\parbox{15cm}{\begin{align}
+    \vec{T}(\vec{x})=0
+    \implies\vec{Ax}=0
+\end{align}}\\&where $\vec{x}\in\vec{V}$ and matrix $\vec{A}$ is same as before.\\
+\hline$rank(\vec{T})$&\parbox{15cm}{\begin{align}
+    rank(\vec{T})=rank(\vec{A})
+\end{align}}\\
+\hline$\vec{T}^2$&\parbox{15cm}{\begin{align}
+    \vec{T}^2(\vec{x})&=\vec{A}^2\vec{x}\quad\quad\vec{x}\in\vec{V}\\
+    rank(\vec{T}^2)&=rank(\vec{A}^2)
+\end{align}}\\
+\hline$\vec{A}$ and $\vec{A}^2$&The basis vectors of column-space of $\vec{A}$ and $\vec{A}^2$ are same.\\&The basis vectors of null-space of $\vec{A}$ and $\vec{A}^2$ are same.\\
+\hline
+\caption{Definitions and theorem used}
+\label{deftab}
+\end{longtable}
+\newpage
+\section{\textbf{Solution}}
+\renewcommand{\thetable}{2}
+\begin{longtable}{|l|l|}
+\hline
+\endhead
+\textbf{Statement}&\textbf{Observations}\\
+\hline
+Given&$\vec{V}$ is a finite dimensional space over $\mathbb{R}$ and $T:\vec{V}\rightarrow\vec{V}$\\&\parbox{15cm}{\begin{align}
+    rank(\vec{T})=rank(\vec{T}^2)\label{r}
+\end{align}}\\&According to rank-nullity theorem.\\&\parbox{15cm}{\begin{align}
+    dim(\vec{V})=rank(\vec{T})+nullity(\vec{T})\label{drn1}\\
+    dim(\vec{V})=rank(\vec{T}^2)+nullity(\vec{T}^2)\label{drn2}
+\end{align}}\\&from \eqref{drn1} and \eqref{drn2}. we get\\&\parbox{15cm}{\begin{align}
+    \implies rank(\vec{T})+nullity(\vec{T})&=rank(\vec{T}^2)+nullity(\vec{T}^2)\\
+    \implies nullity(\vec{T})&=nullity(\vec{T}^2)\label{n}
+\end{align}}\\
+\hline
+\caption{Observations}
+\label{obs}
+\end{longtable}
+\renewcommand{\thetable}{3}
+\begin{longtable}{|l|l|l|}
+\hline
+\endhead
+\textbf{Option}&\textbf{Solution}&\textbf{True/False}\\
+\hline
+1&From \eqref{n}, let&\\&\parbox{13cm}{\begin{align}
+    nullity(\vec{T})&=nullity(\vec{T}^2)=n\label{p1}
+\end{align}}&\\&Therefore, from table \ref{deftab} and \eqref{p1} we can say that both null space of&True\\&linear operator $\vec{T}$ and null space of linear operator $\vec{T}^2$ will have same n&\\& number of basis.&\\&\parbox{13cm}{\begin{align}
+    \implies Kernel(\vec{T})=Kernel(\vec{T}^2)\label{res1}
+\end{align}}&\\
+\hline
+2&From \eqref{r}, let&\\&\parbox{13cm}{\begin{align}
+    rank(\vec{T})&=rank(\vec{T}^2)=r\label{p2}
+\end{align}}&\\&Therefore, from table \ref{deftab} and \eqref{p2} we can say that both column space of&True\\&linear operator $\vec{T}$ and column space of linear operator $\vec{T}^2$ will have same r&\\& number of basis.&\\&\parbox{13cm}{\begin{align}
+    \implies Range(\vec{T})=Range(\vec{T}^2)\label{res2}
+\end{align}}&\\
+\hline
+3&From table \ref{deftab}, \eqref{p1} and \eqref{p2} we can that the r number of basis vectors&\\&of column space of linear operator $\vec{T}$ will form r-dimensional space which&\\&consists zero vector and n number of basis vectors of null space of linear&True\\&operator $\vec{T}$ will form n-dimensional space which consists zero vector.&\\&\parbox{13cm}{\begin{align}
+    \implies Kernel(\vec{T})\cap Range(\vec{T})=\cbrak{0}\label{res3}
+\end{align}}&\\
+\hline
+4&From table \eqref{res1}, \eqref{res2} and \eqref{res3}, we get&\\&\parbox{13cm}{\begin{align}
+    \implies Kernel(\vec{T}^2)\cap Range(\vec{T}^2)=\cbrak{0}
+\end{align}}&True\\
+\hline
+\caption{Solution}
+\label{sol}
+\end{longtable}
+\end{document}
