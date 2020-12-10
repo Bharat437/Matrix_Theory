@@ -158,11 +158,9 @@ Let $\vec{F}:\mathbb{R}^n\times\mathbb{R}^n\rightarrow\mathbb{R}$ be the functio
     \langle\vec{x},\vec{y}\rangle=\vec{x}^T\vec{y}\label{inp}
 \end{align}}\\&Where $\vec{x}$,$\vec{y}\in\mathbb{R}^n$\\
 \hline
-\textbf{Inner Product}&\parbox{13cm}{\begin{align}
+\textbf{Inner Product}&\\\textbf{Property used}&\parbox{13cm}{\begin{align}
     \langle\vec{x},\vec{y}\rangle=\vec{x}^T\vec{y}=\vec{y}^T\vec{x}=\langle\vec{y},\vec{x}\rangle\label{prop1}
-    \end{align}}\\\textbf{Properties used}&\parbox{13cm}{\begin{align}
-    \langle\alpha\vec{x},\vec{y}\rangle=\alpha\langle\vec{x},\vec{y}\rangle\label{prop2}
-\end{align}}\\
+    \end{align}}\\
 \hline
 \textbf{Total Derivative} $D$&Total derivative is a linear transformation. For function $\vec{F}(\vec{x},\vec{y})$, the total\\& derivative is given as $D\vec{F}(\vec{x},\vec{y})$ which says that total derivative of\\&function $\vec{F}$ at $(\vec{x},\vec{y})$.\\
 \hline
@@ -177,16 +175,19 @@ Let $\vec{F}:\mathbb{R}^n\times\mathbb{R}^n\rightarrow\mathbb{R}$ be the functio
 \textbf{Statement}&\textbf{Observations}\\
 \hline
 Given&Function $\vec{F}:\mathbb{R}^n\times\mathbb{R}^n\rightarrow\mathbb{R}$, it is given as\\&\parbox{13cm}{\begin{align}
-    \vec{F}(\vec{x},\vec{y})=\langle\vec{Ax},\vec{y}\rangle\label{F}
-\end{align}}\\&where $\vec{x}$,$\vec{y}\in\mathbb{R}^n$\\&Using property \eqref{prop2}, we get\\&\parbox{13cm}{\begin{align}
-    \implies\vec{F}(\vec{x},\vec{y})=\vec{A}\langle\vec{x},\vec{y}\rangle\\
-    \implies\vec{F}(\vec{x},\vec{y})=\vec{A}\vec{x}^T\vec{y}\label{Fp}
+    \vec{F}(\vec{x},\vec{y})=\langle\vec{Ax},\vec{y}\rangle=\vec{x}^T\vec{A}^T\vec{y}\label{F}
+\end{align}}\\&where $\vec{x}$,$\vec{y}\in\mathbb{R}^n$\\&Using property \eqref{prop1}, we can also get\\&\parbox{13cm}{\begin{align}
+    \implies\vec{F}(\vec{x},\vec{y})=\langle\vec{y},\vec{Ax}\rangle\\
+    \implies\vec{F}(\vec{x},\vec{y})=\vec{y}^T\vec{A}\vec{x}\label{Fp}
 \end{align}}\\
 \hline
 Total Derivative $D$&Now we will calculate $D\vec{F}(\vec{x},\vec{y})$\\&\parbox{13cm}{\begin{align}
     D\vec{F}(\vec{x},\vec{y})=\myvec{\frac{\partial \vec{F}}{\partial \vec{x}}&\frac{\partial \vec{F}}{\partial \vec{y}}}\label{D}
-\end{align}}\\&From \eqref{Fp}, \eqref{D} and using property \eqref{prop1} we get\\&\parbox{13cm}{\begin{align}
-    D\vec{F}(\vec{x},\vec{y})=\myvec{\vec{A}\vec{y}^T&\vec{A}\vec{x}^T}\label{Dsol}
+\end{align}}\\&From \eqref{F},\eqref{Fp} we get\\&\parbox{13cm}{\begin{align}
+    \frac{\partial \vec{F}}{\partial \vec{x}}=\vec{y}^T\vec{A}\label{df1}\\
+    \frac{\partial \vec{F}}{\partial \vec{y}}=\vec{x}^T\vec{A}^T\label{df2}
+\end{align}}\\&Substitute \eqref{df1} and \eqref{df2} in \eqref{D}\\&\parbox{13cm}{\begin{align}
+    D\vec{F}(\vec{x},\vec{y})=\myvec{\vec{y}^T\vec{A}&\vec{x}^T\vec{A}^T}_{1\times n^2}\label{Dsol}
 \end{align}}\\
 \hline
 \caption{Observations}
@@ -198,20 +199,19 @@ Total Derivative $D$&Now we will calculate $D\vec{F}(\vec{x},\vec{y})$\\&\parbox
 \endhead
 \textbf{Option}&\textbf{Solution}&\textbf{True/}\\&&\textbf{False}\\
 \hline
-1&First we calculate $(D\vec{F}(\vec{x},\vec{y}))(\vec{u},\vec{v})$ where $\vec{u}$,$\vec{v}\in\mathbb{R}^n$&\\&Using \eqref{D}and block matrix multiplication we get&\\&\parbox{14cm}{\begin{align}
-    (D\vec{F}(\vec{x},\vec{y}))(\vec{u},\vec{v})=\myvec{\vec{A}\vec{y}^T&\vec{A}\vec{x}^T}\myvec{\vec{u}\\\vec{v}}\\
-    \implies(D\vec{F}(\vec{x},\vec{y}))(\vec{u},\vec{v})=\vec{A}\vec{y}^T\vec{u}+\vec{A}\vec{x}^T\vec{v}
-\end{align}}&\\&Using property \eqref{prop1} we get&True\\&\parbox{14cm}{\begin{align}
-    \implies(D\vec{F}(\vec{x},\vec{y}))(\vec{u},\vec{v})=\vec{A}\vec{u}^T\vec{y}+\vec{A}\vec{x}^T\vec{v}\label{eq1}\\
-    \implies(D\vec{F}(\vec{x},\vec{y}))(\vec{u},\vec{v})=\vec{A}\langle\vec{u},\vec{y}\rangle+\vec{A}\langle\vec{x},\vec{v}\rangle
-\end{align}}&\\&Using property \eqref{prop2} we get&\\&\parbox{14cm}{\begin{align}(D\vec{F}(\vec{x},\vec{y}))(\vec{u},\vec{v})=\langle\vec{Au},\vec{y}\rangle+\langle\vec{Ax},\vec{v}\rangle\label{p1}
+1&First we calculate $(D\vec{F}(\vec{x},\vec{y}))(\vec{u},\vec{v})$ where $\vec{u}$,$\vec{v}\in\mathbb{R}^n$&\\&Using \eqref{Dsol}and block matrix multiplication we get&\\&\parbox{14cm}{\begin{align}
+    (D\vec{F}(\vec{x},\vec{y}))(\vec{u},\vec{v})=\myvec{\vec{y}^T\vec{A}&\vec{x}^T\vec{A}^T}\myvec{\vec{u}\\\vec{v}}\\
+    \implies(D\vec{F}(\vec{x},\vec{y}))(\vec{u},\vec{v})=\vec{y}^T\vec{A}\vec{u}+\vec{x}^T\vec{A}^T\vec{v}\label{eq1}\\
+    (D\vec{F}(\vec{x},\vec{y}))(\vec{u},\vec{v})=\langle\vec{y},\vec{Au}\rangle+\langle\vec{Ax},\vec{v}\rangle
+\end{align}}&\\&Using property \eqref{prop1} we get&\\&\parbox{14cm}{\begin{align}
+    (D\vec{F}(\vec{x},\vec{y}))(\vec{u},\vec{v})=\langle\vec{Au},\vec{y}\rangle+\langle\vec{Ax},\vec{v}\rangle\label{p1}
 \end{align}}&\\
 \hline
 2.&Using \eqref{eq1}, if $\vec{u}=0$ and $\vec{v}=0$ then we get&\\&\parbox{14cm}{\begin{align}
     (D\vec{F}(\vec{x},\vec{y}))(0,0)=0\label{p2}
 \end{align}}&True\\
 \hline
-3.&Since from \eqref{Dsol} we can say that $D\vec{F}(\vec{x},\vec{y})$ will exist for any $(\vec{x},\vec{y})\in\mathbb{R}^n\times\mathbb{R}^n$.&False\\
+3.&Since from \eqref{Dsol} we can say that $D\vec{F}(\vec{x},\vec{y})$ will exist for any $(\vec{x},\vec{y})\in\mathbb{R}^n\times\mathbb{R}^n$.&False\\&&\\
 \hline
 4.&From \eqref{Dsol}, if $(\vec{x},\vec{y})=(0,0)$ we get&\\&\parbox{14cm}{\begin{align}
     D\vec{F}(\vec{x},\vec{y})|_{(0,0)}=0
