@@ -170,7 +170,7 @@ Let $\vec{A}$ be $5\times5$ matrix and let $\vec{B}$ be obtained by changing one
 \hline
 1.&Given matrix $\vec{A}$ has rank $r$ and $\vec{B}$ has rank s.&\\&Also given matrix $\vec{B}$ is obtained by changing only one element of $\vec{A}$.&\\&Lets assume another matrix $\vec{P}$ whose addition to matrix $\vec{A}$ results to matrix $\vec{B}$&\\&as below.&\\&\parbox{14cm}{\begin{align}
     \vec{A}+\vec{P}=\vec{B}\label{APB}
-\end{align}}&\\&Since matrix $\vec{P}$ consists only single element we can say that $rank(P)=1$&True\\&From \eqref{prop}, \eqref{APB}, we get&\\&\parbox{14cm}{\begin{align}
+\end{align}}&\\&Since matrix $\vec{P}$ consists only single element we can say that $rank(\vec{P})=1$&True\\&From \eqref{prop}, \eqref{APB}, we get&\\&\parbox{14cm}{\begin{align}
     rank(\vec{A}+\vec{P})&\leq rank(\vec{A})+rank(\vec{P})\\
     \implies rank(\vec{B})&\leq rank(\vec{A})+rank(\vec{P})\\
     \implies s&\leq r+1\label{p1}
@@ -196,7 +196,7 @@ Let $\vec{A}$ be $5\times5$ matrix and let $\vec{B}$ be obtained by changing one
 \hline2.&From \eqref{APB}, If $\vec{P}=-\vec{Q}$ then we can get as below&\\&\parbox{14cm}{\begin{align}
     \vec{A}-\vec{Q}=\vec{B}\\
     \implies\vec{B}+\vec{Q}=\vec{A}\label{BQP}
-\end{align}}&\\&Since matrix $\vec{Q}$ also consists only single element we can say that $rank(Q)=1$&True\\&From \eqref{prop}, \eqref{BQP}, we get&\\&\parbox{14cm}{\begin{align}
+\end{align}}&\\&Since matrix $\vec{Q}$ also consists only single element we can say that $rank(\vec{Q})=1$&True\\&From \eqref{prop}, \eqref{BQP}, we get&\\&\parbox{14cm}{\begin{align}
     rank(\vec{B}+\vec{Q})&\leq rank(\vec{B})+rank(\vec{Q})\\
     \implies rank(\vec{A})&\leq rank(\vec{B})+rank(\vec{Q})\\
     \implies r&\leq s+1\\
